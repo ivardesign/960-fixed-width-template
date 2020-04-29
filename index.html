@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>960 Fixed-Width</title>
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <!-- 
+    This template is circa 2008, fixed-width (960px) in HTML5.
+    The page is designed for a screen that can display at least
+    960 pixels across and does not adjust to smaller or larger
+    resolutions in any way. If you're on a smaller screen, you
+    would have to scroll horizonally as well as up and down and
+    you may have to do a lot of pinching and zooming to read or
+    see anything if you were on a smartphone.
+
+    The developer utilizes the "float hack" as well as the 
+    "clearfix hack" to accomplish its layout. This method came
+    quickly after float became available and as a way to avoid
+    using HTML table for layout.
+    
+    Float-hack: float was intended to float images to the
+    left or right. We started using it on things other than
+    images because of the limitations of CSS/browsers.
+
+    Clearfix Hack: when something is 'float-ed', it is
+    removed from the flow and the containing block can collapse
+    allowing the item to peek out of it's container, often
+    an visually unappealing result.  
+
+    Clearfix Example:  .clearfix:after { 
+                         display: block;
+                         clear: both;
+                       }
+    
+    The clearfix hack has/had a few variations but always had
+    'clear: both' on something after the floated element and
+    the content intended to wrap around the floated element.
+
+    The purpose of this template demo is to show some of what
+    it was like in the past as well as to provide a starting-
+    point for replicating this layout but with current 
+    techniques to acheive a responsive display that provides 
+    a better user experience on screen sizes ranging from small
+    to large. This can be done without using float hacks of 
+    any kind but they may still be used if needed 
+    [why not? it's a tool.].
+  -->
+</head>
+
+<body>
+
+  <div class="wrapper row1">
+    <header id="header" class="clear">
+      <div id="hgroup">
+        <h1><a href="#">960 Fixed-Width</a></h1>
+        <h2>We Used Float to Develop this Website Layout</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Text Link</a></li>
+          <li><a href="#">Text Link</a></li>
+          <li><a href="#">Text Link</a></li>
+          <li><a href="#">Text Link</a></li>
+          <li class="last"><a href="#">Text Link</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Content -->
+  <div class="wrapper row2">
+
+    <!-- Container -->
+    <div id="container" class="clear">
+
+      <!-- Slider -->
+      <section id="slider">
+        <a href="#"><img src="img/demo/960x360.gif" alt=""></a>
+      </section>
+
+      <!-- main content -->
+      <div id="homepage">
+
+        <!-- Services -->
+        <section id="services" class="clear">
+
+          <article class="one_third">
+            <figure>
+              <img src="img/demo/290x180.gif" width="290" height="180" alt="">
+              <figcaption>
+                <h2>Indonectetus facilis</h2>
+                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+                <footer class="more">
+                  <a href="#">Read More &raquo;</a>
+                </footer>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="one_third">
+            <figure>
+              <img src="img/demo/290x180.gif" width="290" height="180" alt="">
+              <figcaption>
+                <h2>Indonectetus facilis</h2>
+                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+                <footer class="more">
+                  <a href="#">Read More &raquo;</a>
+                </footer>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="one_third lastbox">
+            <figure>
+              <img src="img/demo/290x180.gif" width="290" height="180" alt="">
+              <figcaption>
+                <h2>Indonectetus facilis</h2>
+                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+                <footer class="more">
+                  <a href="#">Read More &raquo;</a>
+                </footer>
+              </figcaption>
+            </figure>
+          </article>
+
+        </section>
+        <!-- / Services -->
+
+        <!-- Introduction -->
+        <section id="intro" class="last clear">
+
+          <hr class="divider">
+
+          <article>
+            <figure>
+              <img src="img/demo/450x250.gif" width="450" height="250" alt="">
+              <figcaption>
+                <h2>Indonectetus facilis leo nibh</h2>
+                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+                <footer class="more">
+                  <a href="#">Read More &raquo;</a>
+                </footer>
+              </figcaption>
+            </figure>
+          </article>
+
+        </section>
+        <!-- / Introduction -->
+
+      </div>
+      <!-- / Main Content -->
+
+    </div>
+    <!-- / Container -->
+
+  </div>
+  <!-- / Content -->
+
+
+  <!-- Footer -->
+  <div class="wrapper row3">
+    <div id="footer" class="clear">
+      <!-- Section One -->
+      <section class="one_quarter">
+        <h2 class="title">Footer Start - Link Block</h2>
+        <nav>
+          <ul>
+            <li><a href="#">Lorem ipsum dolor sit</a></li>
+            <li><a href="#">Amet consectetur</a></li>
+            <li><a href="#">Praesent vel sem id</a></li>
+            <li><a href="#">Curabitur hendrerit est</a></li>
+            <li class="last"><a href="#">Sed a nulla urna</a></li>
+          </ul>
+        </nav>
+      </section>
+      <!-- Section Two -->
+      <section class="one_quarter">
+        <h2 class="title">Link Block</h2>
+        <nav>
+          <ul>
+            <li><a href="#">Lorem ipsum dolor sit</a></li>
+            <li><a href="#">Amet consectetur</a></li>
+            <li><a href="#">Praesent vel sem id</a></li>
+            <li><a href="#">Curabitur hendrerit est</a></li>
+            <li class="last"><a href="#">Sed a nulla urna</a></li>
+          </ul>
+        </nav>
+      </section>
+      <!-- Section Three -->
+      <section class="one_quarter">
+        <h2 class="title">Link Block</h2>
+        <nav>
+          <ul>
+            <li><a href="#">Lorem ipsum dolor sit</a></li>
+            <li><a href="#">Amet consectetur</a></li>
+            <li><a href="#">Praesent vel sem id</a></li>
+            <li><a href="#">Curabitur hendrerit est</a></li>
+            <li class="last"><a href="#">Sed a nulla urna</a></li>
+          </ul>
+        </nav>
+      </section>
+      <!-- Section Four -->
+      <section class="one_quarter lastbox">
+        <h2 class="title">Link Block</h2>
+        <nav>
+          <ul>
+            <li><a href="#">Lorem ipsum dolor sit</a></li>
+            <li><a href="#">Amet consectetur</a></li>
+            <li><a href="#">Praesent vel sem id</a></li>
+            <li><a href="#">Curabitur hendrerit est</a></li>
+            <li class="last"><a href="#">Sed a nulla urna</a></li>
+          </ul>
+        </nav>
+      </section>
+
+    </div>
+  </div>
+  <!-- Copyright -->
+  <div class="wrapper row4">
+    <footer id="copyright" class="clear">
+      <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">Totally Unique</a></p>
+    </footer>
+  </div>
+</body>
+
+</html>
