@@ -1,42 +1,35 @@
 # 960-fixed-width-template
-An example fixed-width, HTML5 template utilizing Float and clearfix hack
+## Step One: Getting a Small Screen Presentation Started
 
-    This template is circa 2008, fixed-width (960px) in HTML5.
-    The page is designed for a screen that can display at least
-    960 pixels across and does not adjust to smaller or larger
-    resolutions in any way. If you're on a smaller screen, you
-    would have to scroll horizonally as well as up and down and
-    you may have to do a lot of pinching and zooming to read or
-    see anything if you were on a smartphone.
+    Let's create the new site with semantic HTML5.  We can use
+    the old structure and start by cleaning it up (one approach,
+    but you could just start from scratch with new), simplifying
+    wherever possible, while keeping in mind some parts may be
+    as helpful as they were in this old version (don't rip out
+    important support beams unless you plan to replace them).
+    On the other hand, some of it may need to be rebuilt
+    completely.
 
-    The developer utilizes the "float hack" as well as the 
-    "clearfix hack" to accomplish its layout. This method came
-    quickly after float became available and as a way to avoid
-    using HTML table for layout.
-    
-    Float-hack: float was intended to float images to the
-    left or right. We started using it on things other than
-    images because of the limitations of CSS/browsers.
-
-    Clearfix Hack: when something is 'float-ed', it is
-    removed from the flow and the containing block can collapse
-    allowing the item to peek out of it's container, often
-    an visually unappealing result.  
-
-    Clearfix Example:  .clearfix:after { 
-                         display: block;
-                         clear: both;
-                       }
-    
-    The clearfix hack has/had a few variations but always had
-    'clear: both' on something after the floated element and
-    the content intended to wrap around the floated element.
-
-    The purpose of this template demo is to show some of what
-    it was like in the past as well as to provide a starting-
-    point for replicating this layout but with current 
-    techniques to acheive a responsive display that provides 
-    a better user experience on screen sizes ranging from small
-    to large. This can be done without using float hacks of 
-    any kind but they may still be used if needed 
-    [why not? it's a tool.].
+    1) Remove all the old CSS entirely.
+    2) Add the Viewport Meta to the head of the document and 
+       view the naked HTML in a browser. What happens to the 
+       layout and content?
+    3) How can this lay out on a phone? Med. screen? For 960px
+       we already have our target layout and skeleton design
+       but some screens are much larger.
+       Consider what HTML architecture will be needed to 
+       acheive the presentation(s). It's probably a good idea
+       to at least take a pencil and paper and draw out the 
+       skeleton.  Keep these drawings very simple but clear.
+    4) Clean up/simplify HTML if needed. Consider semantics and
+       accessibility, replace/add where needed.
+    5) Working with small screen presentation only, use the least
+       possible CSS to get the bare HTML & content usable.
+       No Hamburger menu at this point, no colors or font
+       assignments of any kind, just the exposed links, content
+       and making sure the content is presented in the right way.
+       This is the critical CSS that goes directly in the Head
+       of the HTML document (not in a stylesheet).  Let the
+       browser do as much work for you as you can without over-
+       riding it to get better accessibility + keep your CSS
+       work lighter.
