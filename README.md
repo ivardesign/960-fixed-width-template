@@ -1,4 +1,4 @@
-# 960-fixed-width-template Remodle for Responsiveness
+# 960-fixed-width-template Remodel for Responsiveness
 ## Step One: Getting a Small Screen Presentation Started
 
   Let's create the new site with semantic HTML5.  We can use
