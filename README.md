@@ -118,10 +118,10 @@
   and get to work quickly and with ease.
 
   Whatever your approach is to developing this site, try to focus
-  on the main topics of Responsive, Flexbox and Grid. Your product
-  should be useable and relatively pleasing on screen sizes in a 
-  range from 320px wide + 480px tall, and everything in between up
-  to at least 1920px wide.
+  on the main topics of Responsive, Flexbox and Grid. For this 
+  exercise, your product should be useable and relatively pleasing 
+  on screen sizes in a range from 320px wide + 480px tall, and 
+  everything in between up to at least 1920px wide.
 
   Start with mobile first and test in your browser.  When you're
   satisfied there move on to larger sized display and adjust where
