@@ -127,11 +127,13 @@
   Query usage will become useful.**
 
   Although you could have started using them already by this point,
-  you'll certainly want to start using them now. Keep your Custom
-  Property definitions at the top of your CSS. You can tell you 
-  need a Custom Property (CP or CP's) when you feel you need to
-  use a media query to adjust something.  An example could be a
-  container that needs a width or max-width set on larger screens.
+  you'll certainly want to start using them now. **Keep your Custom
+  Property definitions and Media Query's** at the top of your CSS. 
+  You can tell you need a Custom Property (CP or CP's) when you 
+  feel you need to use a media query to adjust something.  An 
+  example could be your navigation that needs to be a Hamburger on
+  small screens, but a regular inline block of links on larger
+  screens.
 
   In your media query, define your CP:
 
