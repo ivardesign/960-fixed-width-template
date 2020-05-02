@@ -123,8 +123,13 @@
   satisfied there move on to larger sized display and adjust where
   you need.
 
-  **It's at this point for sure where Custom Property and Media
-  Query usage will become useful.**
+  **It's at this point where Custom Property and Media
+  Query usage can become useful.**
+
+  Not all responsive sites need Custom Properties or even Media
+  Queries. You can write whole responsive sites just using Flexbox. 
+  But there's a good chance these tools will come in handy for this 
+  project.
 
   Although you could have started using them already by this point,
   you'll certainly want to start using them now. **Keep your Custom
