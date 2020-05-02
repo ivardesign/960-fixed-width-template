@@ -104,16 +104,18 @@
   people and marketing to the jr. designer to the CEO, everyone
   represents the company/business. 
   
-  Your card, the front door, all convey a message to your target 
-  audience about you and your product. With this awareness we can 
-  take the real responsibilty we all have to work with each other 
-  to put the best product out we're capable of. It's not just about 
-  the code but the code is a critical ingredient of the cake. Keep 
-  your code neat and style consistent. Add comments to your code. 
-  Commit frequently with meaningful commit messages. Use meaningful 
-  class names so future-you and/or the developer after you can 
-  easily figure out what your system is and get to work quickly and 
-  with ease.
+  Your business card, your front door, your personal attire, all 
+  convey a message to your target audience about you and your 
+  product. With this awareness we can take the real responsibilty 
+  we all have to work with each other to put the best product out 
+  we're capable of. 
+  
+  It's not just about the code but obviously the code is a critical 
+  ingredient of the cake. Keep your code neat and style consistent. 
+  Add comments to your code. Commit frequently with meaningful 
+  commit messages. Use meaningful class names so future-you and/or 
+  the developer after you can easily figure out what your system is 
+  and get to work quickly and with ease.
 
   Whatever your approach is to developing this site, try to focus
   on the main topics of Responsive, Flexbox and Grid. Your product
