@@ -9,67 +9,67 @@
   important support beams unless you plan to replace them).
   On the other hand, some of it may need to be rebuilt
   completely.
-
-  A. Remove all the old CSS entirely.
-  B. Add the Viewport Meta to the head of the document and 
-     view the naked HTML in a browser. What happens to the 
-     layout and content?
-  C. How can this lay out on a phone? Med. screen? For 960px
-     we already have our target layout and skeleton design
-     but some screens are much larger.
-     Consider what HTML architecture will be needed to 
-     acheive the presentation(s). It's probably a good idea
-     to at least take a pencil and paper and draw out the 
-     skeleton.  Keep these drawings very simple but clear.
-  D. Clean up/simplify HTML if needed. Consider semantics and
-     accessibility, replace/add where needed.
-  E. Working with small screen presentation only, use the least
-     possible CSS to get the bare HTML & content usable.
-     No Hamburger menu at this point, no colors or font
-     assignments of any kind, just the exposed links, content
-     and making sure the content is presented in the right way.
-     This is the critical CSS that goes directly in the Head
-     of the HTML document (not in a stylesheet).  Let the
-     browser do as much work for you as you can without over-
-     riding it to get better accessibility + keep your CSS
-     work lighter.
-
+  
+    A. Remove all the old CSS entirely.
+    B. Add the Viewport Meta to the head of the document and 
+       view the naked HTML in a browser. What happens to the 
+       layout and content?
+    C. How can this lay out on a phone? Med. screen? For 960px
+       we already have our target layout and skeleton design
+       but some screens are much larger.
+       Consider what HTML architecture will be needed to 
+       acheive the presentation(s). It's probably a good idea
+       to at least take a pencil and paper and draw out the 
+       skeleton.  Keep these drawings very simple but clear.
+    D. Clean up/simplify HTML if needed. Consider semantics and
+       accessibility, replace/add where needed.
+    E. Working with small screen presentation only, use the least
+       possible CSS to get the bare HTML & content usable.
+       No Hamburger menu at this point, no colors or font
+       assignments of any kind, just the exposed links, content
+       and making sure the content is presented in the right way.
+       This is the critical CSS that goes directly in the Head
+       of the HTML document (not in a stylesheet).  Let the
+       browser do as much work for you as you can without over-
+       riding it to get better accessibility + keep your CSS
+       work lighter.
+  
 ## Step Two: Atomization, Design & Development
 
   ### Atomization 
 
   At this stage we've examined our HTML architecture some and
   can break it down into components, perhaps something like:
-
-  A. Header
-      I. Title-group (logo, title, tagline) 
-     II. Main Navigation
-  B. Main Content
-      I. Hero
-     II. Feature
-    III. Article
-  C. Footer
-      I. Sitemap
-     II. Links
-    III. Contact  
-
+    
+    A. Header
+        I. Title-group (logo, title, tagline) 
+       II. Main Navigation
+    B. Main Content
+        I. Hero
+       II. Feature
+      III. Article
+    C. Footer
+        I. Sitemap
+       II. Links
+      III. Contact  
+    
   Consider how the main components like a header, main content 
   and footer contain smaller components and how each may affect 
   and/or connect to others at various screen sizes. How modular
   do these components need to be? Think about things like:
-
-  - Can I target each component with my CSS without assigning
-    ID's and Classes? 
-  - Where are classes/ID's obviously needed?
-  - Can I turn my navigation into a mobile-friendly navigation
-    using the HTML that exists or do I need to edit my HTML more?
-  - What approach am I going to use for my varying screen sizes;
-    will I use Flexbox? Grid? Both? How and where?
-  - How will my component and its styles fit with/in the larger 
-    picture?
-
-  It may be helpful when starting, to put a border on each of the
-  components to help visualize their box-model and interaction.
+    
+    - Can I target each component with my CSS without assigning
+      ID's and Classes? 
+    - Where are classes/ID's obviously needed?
+    - Can I turn my navigation into a mobile-friendly navigation
+      using the HTML that exists or do I need to edit my HTML more?
+    - What approach am I going to use for my varying screen sizes;
+      will I use Flexbox? Grid? Both? How and where?
+    - How will my component and its styles fit with/in the larger 
+      picture?
+    
+    It may be helpful when starting, to put a border on each of the
+    components to help visualize their box-model and interaction.
 
   ### Design, Color Palette/Style Guide:
 
@@ -135,23 +135,23 @@
 
   In your media query, define your CP:
 
-  @media screen and (min-width: 750px) {
-    --hamburger-display: none;
-  } 
+      @media screen and (min-width: 750px) {
+        --hamburger-display: none;
+      } 
 
   Then go back to the definition you are adjusting (below, in the
   style you already wrote) and swap out the setting if you had one
   (if you didn't, add one) using the 'variable':
 
-  .hamburger {
-    display: var(--hamburger-display, block);
-  }
+      .hamburger {
+        display: var(--hamburger-display, block);
+      }
 
   Note the use of the default after the varible name and comma. Use
   a default in this case because the CP wasn't defined until the
   media query.
 
-  
+
 
 
 
