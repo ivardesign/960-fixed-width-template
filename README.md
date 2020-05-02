@@ -73,11 +73,11 @@
 
   ### Design, Color Palette/Style Guide:
 
-  Color choices are a common task (not required for this exer-
-  cise but not prohibited).  When choosing a color pallette be
-  sure to work toward good accessibility (eg.: contrast ratios),
-  your site purpose and mood, your target audience and the voice
-  of the content.
+  Color choices are a common task (not required for this exercise
+  but not prohibited).  When choosing a color pallette be sure to
+  work toward good accessibility (eg.: contrast ratios), your site
+  purpose and mood, your target audience and the voice of the 
+  content.
 
   Consistentcy in the style of links, buttons and form elements,
   font choices, headings and font proportions are important for 
@@ -128,7 +128,7 @@
 
   Although you could have started using them already by this point,
   you'll certainly want to start using them now. **Keep your Custom
-  Property definitions and Media Query's** at the top of your CSS. 
+  Property definitions and Media Queries at the top of your CSS.** 
   You can tell you need a Custom Property (CP or CP's) when you 
   feel you need to use a media query to adjust something.  An 
   example could be your navigation that needs to be a Hamburger on
