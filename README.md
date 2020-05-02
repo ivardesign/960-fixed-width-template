@@ -141,9 +141,9 @@
         --hamburger-display: none;
       } 
 
-  Then go back to the definition you are adjusting (below, in the
-  style you already wrote) and swap out the setting if you had one
-  (if you didn't, add one) using the 'variable':
+  Then go back to the definition you are adjusting and swap out the
+  setting if you had one (if you didn't, add one now) using the 
+  variable (CP):
 
       .hamburger {
         display: var(--hamburger-display, block);
