@@ -74,7 +74,7 @@
   ### Design, Color Palette/Style Guide:
 
   Color choices are a common task (not required for this exercise
-  but not prohibited).  When choosing a color pallette be sure to
+  but not prohibited).  When choosing a color palette be sure to
   work toward good accessibility (eg.: contrast ratios), your site
   purpose and mood, your target audience and the voice of the 
   content.
