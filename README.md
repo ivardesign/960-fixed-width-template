@@ -5,10 +5,6 @@
   will be removed. Viewport Meta will be added to the head of
   the document.
 
-  The new version of the site should have semantic HTML5
-  that adapts to screens sized as small as 320px X 480px up to
-  1920px wide. 
-
   Working with small screen presentation only, use the least
   possible CSS to get the bare HTML & content usable. No 
   Hamburger menu at this point, no colors or font assignments
