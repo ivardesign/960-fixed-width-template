@@ -1,19 +1,19 @@
 # 960-fixed-width-template Remodel for Responsiveness
 ## Step One: Getting a Small Screen Presentation Started
 
-  Let's create the new site with semantic HTML5.  We can use
-  the old structure and start by cleaning it up (one approach,
-  but you could just start from scratch with new), simplifying
-  wherever possible, while keeping in mind some parts may be
-  as helpful as they were in this old version (don't rip out
-  important support beams unless you plan to replace them).
-  On the other hand, some of it may need to be rebuilt
+  Let's create the new version of this site with semantic HTML5
+  that adapts to screens sized as small as 320px X 480px up to
+  1920px wide. 
+  
+  We can use the old structure and start by cleaning it up, 
+  simplifying where possible while keeping parts that may be
+  usefule in this old version.  Some of it may need to be rebuilt
   completely.
   
-    A. Remove all the old CSS entirely.
-    B. Add the Viewport Meta to the head of the document and 
-       view the naked HTML in a browser. What happens to the 
-       layout and content?
+    A. Remove the old stylesheet entirely.
+    B. Add Viewport Meta to the head of the document and view
+       the HTML in a browser. What happens to the layout and
+       content?
     C. How can this lay out on a phone? Med. screen? For 960px
        we already have our target layout and skeleton design
        but some screens are much larger.
@@ -29,14 +29,13 @@
        assignments of any kind, just the exposed links, content
        and making sure the content is presented in the right way.
        This is the critical CSS that goes directly in the Head
-       of the HTML document (not in a stylesheet).  Let the
-       browser do as much work for you as you can without over-
-       riding it to get better accessibility + keep your CSS
-       work lighter.
+       of the HTML document.  Let the browser do as much work 
+       for you as you can without overriding it to get better 
+       accessibility + keep your CSS work lighter.
   
 ## Step Two: Atomization, Design & Development
 
-  ### Atomization 
+  ### Atomization
 
   At this stage we've examined our HTML architecture some and
   can break it down into components, perhaps something like:
@@ -52,24 +51,26 @@
         I. Sitemap
        II. Links
       III. Contact  
-    
-  Consider how the main components like a header, main content 
-  and footer contain smaller components and how each may affect 
-  and/or connect to others at various screen sizes. How modular
-  do these components need to be? Think about things like:
-    
-    - Can I target each component with my CSS without assigning
-      ID's and Classes? 
-    - Where are classes/ID's obviously needed?
+     
+  Think about things like:
+    - How components like a header, main content and footer 
+      contain smaller components and how each may affect and/or
+      connect to others at various screen sizes. 
+    - How modular do these components need to be? 
+    - How many components are needed to make up a button?    
     - Can I turn my navigation into a mobile-friendly navigation
-      using the HTML that exists or do I need to edit my HTML more?
+      using the HTML that exists or can I edit my HTML more?
     - What approach am I going to use for my varying screen sizes;
       will I use Flexbox? Grid? Both? How and where?
+    - Can I target each component with my CSS without assigning
+      ID's and Classes? 
+    - Where are classes/ID's needed and should my component have
+      isolated classes or can I rely on more global styles?
     - How will my component and its styles fit with/in the larger 
       picture?
-    
-    It may be helpful when starting, to put a border on each of the
-    components to help visualize their box-model and interaction.
+
+  It may be helpful when starting to put a border on each of the
+  components to help visualize their box-model and interaction.
 
   ### Design, Color Palette/Style Guide:
 
@@ -83,7 +84,7 @@
   font choices, headings and font proportions are important for 
   producing and conveying a well planned, professional looking
   site.  Even with a single page, some thought and planning ahead
-  of time can make a big difference.
+  of time makes a big difference.
 
   It has been argued that it's best for accessibility to not set
   a default font-size but instead to focus on font proportions,
@@ -136,13 +137,26 @@
   project.
 
   Although you could have started using them already by this point,
-  you'll certainly want to start using them now. **Keep your Custom
-  Property definitions and Media Queries at the top of your CSS.** 
-  You can tell you need a Custom Property (CP or CP's) when you 
-  feel you need to use a media query to adjust something.  An 
-  example could be your navigation that needs to be a Hamburger on
-  small screens, but a regular inline block of links on larger
-  screens.
+  you'll certainly want to start using them now. 
+
+  **Keep your Custom Property definitions and Media Queries at the top of your CSS.** 
+
+  Custom Properties and Media Queries don't need to be the **very first**
+  thing, but very nearly. Keep them all near the top to better 
+  organize the page and make the sheet more understandable in the 
+  end. Coding this way is akin to practices used in other programming
+  languages (like Java) where we define variables at the top of the
+  page. After getting the hang of how this works, more benefits 
+  will become clear.
+
+
+  Use Custom Properties to define the chosen color palette and font
+  proportions for the entire site ahead of time.
+
+  You can tell you need a Custom Property (CP) when you feel you 
+  need to use a media query to adjust something. An example could
+  be your navigation that needs to be a Hamburger on small screens,
+  but a regular inline block of links on larger screens.
 
   In your media query, define your CP:
 
