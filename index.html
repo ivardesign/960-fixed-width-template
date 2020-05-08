@@ -3,56 +3,17 @@
 
 <head>
   <meta charset="utf-8">
-  <title>960 Fixed-Width</title>
-  <link rel="stylesheet" href="css/main.css" type="text/css">
-  <!-- 
-
-    Step One: Getting a Small Screen Presentation Started.
-
-    Let's create the new site with semantic HTML5.  We can use
-    the old structure and start by cleaning it up (one approach,
-    but you could just start from scratch with new), simplifying
-    wherever possible, while keeping in mind some parts may be
-    as helpful as they were in this old version (don't rip out
-    important support beams unless you plan to replace them).
-    On the other hand, some of it may need to be rebuilt
-    completely.
-
-    1) Remove all the old CSS entirely.
-    2) Add the Viewport Meta to the head of the document and 
-       view the naked HTML in a browser. What happens to the 
-       layout and content?
-    3) How can this lay out on a phone? Med. screen? For 960px
-       we already have our target layout and skeleton design
-       but some screens are much larger.
-       Consider what HTML architecture will be needed to 
-       acheive the presentation(s). It's probably a good idea
-       to at least take a pencil and paper and draw out the 
-       skeleton.  Keep these drawings very simple but clear.
-    4) Clean up/simplify HTML if needed. Consider semantics and
-       accessibility, replace/add where needed.
-    5) Working with small screen presentation only, use the least
-       possible CSS to get the bare HTML & content usable.
-       No Hamburger menu at this point, no colors or font
-       assignments of any kind, just the exposed links, content
-       and making sure the content is presented in the right way.
-       This is the critical CSS that goes directly in the Head
-       of the HTML document (not in a stylesheet).  Let the
-       browser do as much work for you as you can without over-
-       riding it to get better accessibility + keep your CSS
-       work lighter.
-
-
-  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Responsive</title>
 </head>
 
 <body>
 
-  <div class="wrapper row1">
-    <header id="header" class="clear">
+  <div class="wrapper">
+    <header id="header">
       <div id="hgroup">
-        <h1><a href="#">960 Fixed-Width</a></h1>
-        <h2>We Used Float to Develop this Website Layout</h2>
+        <h1><a href="#">Responsive</a></h1>
+        <h2>New Responsive Version of the 960-Fixed-Width Website</h2>
       </div>
       <nav>
         <ul>
@@ -60,30 +21,30 @@
           <li><a href="#">Text Link</a></li>
           <li><a href="#">Text Link</a></li>
           <li><a href="#">Text Link</a></li>
-          <li class="last"><a href="#">Text Link</a></li>
+          <li><a href="#">Text Link</a></li>
         </ul>
       </nav>
     </header>
   </div>
 
   <!-- Content -->
-  <div class="wrapper row2">
+  <div class="wrapper">
 
     <!-- Container -->
-    <div id="container" class="clear">
+    <div class="container">
 
       <!-- Slider -->
-      <section id="slider">
-        <a href="#"><img src="img/demo/960x360.gif" alt=""></a>
+      <section class="slider">
+        <a href="#"><img src="img/demo/960x360.gif" width="960" height="360" alt=""></a>
       </section>
 
       <!-- main content -->
       <div id="homepage">
 
         <!-- Services -->
-        <section id="services" class="clear">
+        <section id="services">
 
-          <article class="one_third">
+          <article>
             <figure>
               <img src="img/demo/290x180.gif" width="290" height="180" alt="">
               <figcaption>
@@ -96,7 +57,7 @@
             </figure>
           </article>
 
-          <article class="one_third">
+          <article>
             <figure>
               <img src="img/demo/290x180.gif" width="290" height="180" alt="">
               <figcaption>
@@ -109,7 +70,7 @@
             </figure>
           </article>
 
-          <article class="one_third lastbox">
+          <article>
             <figure>
               <img src="img/demo/290x180.gif" width="290" height="180" alt="">
               <figcaption>
@@ -126,17 +87,17 @@
         <!-- / Services -->
 
         <!-- Introduction -->
-        <section id="intro" class="last clear">
-
-          <hr class="divider">
+        <section id="intro">
 
           <article>
             <figure>
               <img src="img/demo/450x250.gif" width="450" height="250" alt="">
               <figcaption>
                 <h2>Indonectetus facilis leo nibh</h2>
-                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
-                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. 
+                  Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. 
+                  Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
                 <footer class="more">
                   <a href="#">Read More &raquo;</a>
                 </footer>
@@ -158,11 +119,11 @@
 
 
   <!-- Footer -->
-  <div class="wrapper row3">
-    <div id="footer" class="clear">
+  <div class="wrapper">
+    <div id="footer">
       <!-- Section One -->
-      <section class="one_quarter">
-        <h2 class="title">Footer Start - Link Block</h2>
+      <section>
+        <h2>Footer Start - Link Block</h2>
         <nav>
           <ul>
             <li><a href="#">Lorem ipsum dolor sit</a></li>
@@ -174,8 +135,8 @@
         </nav>
       </section>
       <!-- Section Two -->
-      <section class="one_quarter">
-        <h2 class="title">Link Block</h2>
+      <section>
+        <h2>Link Block</h2>
         <nav>
           <ul>
             <li><a href="#">Lorem ipsum dolor sit</a></li>
@@ -187,8 +148,8 @@
         </nav>
       </section>
       <!-- Section Three -->
-      <section class="one_quarter">
-        <h2 class="title">Link Block</h2>
+      <section>
+        <h2>Link Block</h2>
         <nav>
           <ul>
             <li><a href="#">Lorem ipsum dolor sit</a></li>
@@ -200,8 +161,8 @@
         </nav>
       </section>
       <!-- Section Four -->
-      <section class="one_quarter lastbox">
-        <h2 class="title">Link Block</h2>
+      <section>
+        <h2>Link Block</h2>
         <nav>
           <ul>
             <li><a href="#">Lorem ipsum dolor sit</a></li>
@@ -216,9 +177,9 @@
     </div>
   </div>
   <!-- Copyright -->
-  <div class="wrapper row4">
-    <footer id="copyright" class="clear">
-      <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">Totally Unique</a></p>
+  <div class="wrapper">
+    <footer id="copyright">
+      <p>Copyright &copy; 2020 - All Rights Reserved - <a href="#">Totally Unique</a></p>
     </footer>
   </div>
 </body>
