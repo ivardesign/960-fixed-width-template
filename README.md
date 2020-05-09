@@ -15,6 +15,18 @@
   without overriding it to get better accessibility + keep
   your CSS work lighter.
 
+  Note the font proportions. Are they too big or small?
+  Accessibility standards dictate a font size shouldn't range
+  higher than 150% between H2 to H1, P to the next heading
+  on the page, etc.
+
+  Notice the 'Hero' image left over from the original
+  incarnation of this page; it fits the window now, but it's 
+  very small and not very well proportioned on a small screen.
+  Think about how this should be different to be more useable
+  and appealing. Also note how the default browser margin and
+  padding settings keep the Hero boxed-in looking.
+
 ## Step Two: Atomization, Design & Development
   ### Atomization
 
