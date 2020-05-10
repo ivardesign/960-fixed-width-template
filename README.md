@@ -1,6 +1,9 @@
 # 960-fixed-width-template
 An example fixed-width, HTML5 template utilizing Float and clearfix hack
 
+[ Prerequisites: https://htmldog.com/guides/css/ beginner, intermediate 
+  and advanced ]
+
     This template is circa 2008, fixed-width (960px) in HTML5.
     The page is designed for a screen that can display at least
     960 pixels across and does not adjust to smaller or larger
