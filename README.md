@@ -1,5 +1,6 @@
 # 960-fixed-width-template
 An example fixed-width, HTML5 template utilizing Float and clearfix hack
+View at https://ivardesign.github.io/960-fixed-width-template/
 
 [ Prerequisites: https://htmldog.com/guides/css/ beginner, intermediate 
   and advanced ]
