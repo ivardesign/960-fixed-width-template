@@ -4,7 +4,6 @@
     320(a+b), 197.771(a), 122.2291(b)
     450(a+b), 278.1153(a), 171.8847(b)
 */
-
 *, *:before, *:after, html {
   box-sizing: border-box;
 }
@@ -14,13 +13,14 @@ html, body, figure {
   padding: 0;
 }
 
-/* --- Mobile navigation --- */
+/*     Mobile navigation     */
 #main-nav {
   background: #222;
   color: #fff;
   margin-bottom: 1em;
   line-height: 2;
 }
+
 /* Hamburger Icon */
 #main-nav label { 
   display: block; 
@@ -29,6 +29,7 @@ html, body, figure {
   text-align: center;
   cursor: pointer;
 }
+
 /* Hide the checkbox */
 #hamburger {
   display: none;
@@ -48,7 +49,7 @@ html, body, figure {
   color: #fff;
 }
 
-#nav-items a:hover {
+#nav-items a:hover, #main-nav label:hover {
   background: #555;
 }
 
@@ -82,4 +83,13 @@ html, body, figure {
     text-align: center;
   }
 
+}
+/*    / Mobile navigation     */
+
+#hgroup, figcaption, #footer section, #copyright {
+  padding: 1em;
+}
+
+.more {
+  margin: 1em 0 2em auto;
 }
