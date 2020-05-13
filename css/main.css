@@ -1,3 +1,10 @@
+/* 
+    960(a+b), 593.313(a), 366.6874(b)
+    768(a+b), 474.65(a), 293.35(b)
+    320(a+b), 197.771(a), 122.2291(b)
+    450(a+b), 278.1153(a), 171.8847(b)
+*/
+
 *, *:before, *:after, html {
   box-sizing: border-box;
 }
@@ -8,6 +15,12 @@ html, body, figure {
 }
 
 /* --- Mobile navigation --- */
+#main-nav {
+  background: #222;
+  color: #fff;
+  margin-bottom: 1em;
+  line-height: 2;
+}
 /* Hamburger Icon */
 #main-nav label { 
   display: block; 
@@ -32,10 +45,11 @@ html, body, figure {
   display: block;
   padding: 1em;
   text-decoration: none;
+  color: #fff;
 }
 
 #nav-items a:hover {
-  background: #888;
+  background: #555;
 }
 
 /* Toggle Show/Hide Menu */
@@ -57,11 +71,10 @@ html, body, figure {
   #nav-items, #main-nav input:checked ~ #nav-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
   }
 
   #nav-items li {
-    display: inline-flex;
+    flex-grow: 1;
   }
 
   #nav-items a {
