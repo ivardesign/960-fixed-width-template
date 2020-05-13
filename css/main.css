@@ -1,5 +1,72 @@
-/* resets */
 *, *:before, *:after, html {
   box-sizing: border-box;
 }
 
+html, body, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Mobile navigation --- */
+/* Hamburger Icon */
+#main-nav label { 
+  display: block; 
+  font-style: normal;
+  font-size: 2.5em;
+  text-align: center;
+  cursor: pointer;
+}
+/* Hide the checkbox */
+#hamburger {
+  display: none;
+}
+
+#nav-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Break down menu items into vertical */
+#nav-items a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+}
+
+#nav-items a:hover {
+  background: #888;
+}
+
+/* Toggle Show/Hide Menu */
+#nav-items { 
+  display: none; 
+}
+
+#main-nav input:checked ~ #nav-items { 
+  display: block; 
+}
+
+@media screen and (min-width: 768px) {
+  /* Hide Hamburger Icon on larger screens */
+  #main-nav label {
+    display: none;
+  }
+
+  /* Horizontal Menu Items */
+  #nav-items, #main-nav input:checked ~ #nav-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  #nav-items li {
+    display: inline-flex;
+  }
+
+  #nav-items a {
+    width: 100%;
+    text-align: center;
+  }
+
+}

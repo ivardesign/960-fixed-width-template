@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
   <!--  
 
     # Focus: Small Screens
@@ -27,7 +26,7 @@
 
     a) reset margins/paddings so that some images can be full width, without space on the sides
     b) adjust other margins/paddings
-    c) develop a mobile-navigation; a dropdown menu using simple, modern techniques
+    c) develop a mobile-navigation
 
     Of course even this little bit of des/dev work assumes there is content.  Content must be 
     the priority, therefore it must come before any design or development.  I can't just draw a
@@ -39,180 +38,159 @@
     development should be in the works by this step if not near readiness for use.
 
   -->
+  <header id="header">
+    <div id="hgroup">
+      <h1><a href="#">Responsive</a></h1>
+      <h2>New Responsive Version of the 960-Fixed-Width Website</h2>
+    </div>
+    <nav id="main-nav" aria-label="Main Navigation">
+      <label for="hamburger" role="button">&#9776;</label>
+      <input type="checkbox" id="hamburger">
+      <ul id="nav-items" role="list"><!-- ' role="list" ' restores semantics for screen-readers
+                                            when we use list-style:none in our CSS 
+                                      -->
+        <li><a href="#">Text Link</a></li>
+        <li><a href="#">Text Link</a></li>
+        <li><a href="#">Text Link</a></li>
+        <li><a href="#">Text Link</a></li>
+        <li><a href="#">Text Link</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Content -->
+  <!-- Hero -->
+  <section class="hero">
+    <a href="#"><img src="img/demo/960x360.gif" width="960" height="360" alt=""></a>
+  </section>
+  <!-- main content -->
+  <main>
+    <!-- Services -->
+    <section id="services">
 
-  <div class="wrapper">
-    <header id="header">
-      <div id="hgroup">
-        <h1><a href="#">Responsive</a></h1>
-        <h2>New Responsive Version of the 960-Fixed-Width Website</h2>
-      </div>
+      <article>
+        <figure>
+          <img src="img/demo/290x180.gif" width="290" height="180" alt="">
+          <figcaption>
+            <h2>Indonectetus facilis</h2>
+            <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+            <footer class="more">
+              <a href="#">Read More &raquo;</a>
+            </footer>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <figure>
+          <img src="img/demo/290x180.gif" width="290" height="180" alt="">
+          <figcaption>
+            <h2>Indonectetus facilis</h2>
+            <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+            <footer class="more">
+              <a href="#">Read More &raquo;</a>
+            </footer>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <figure>
+          <img src="img/demo/290x180.gif" width="290" height="180" alt="">
+          <figcaption>
+            <h2>Indonectetus facilis</h2>
+            <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+            <footer class="more">
+              <a href="#">Read More &raquo;</a>
+            </footer>
+          </figcaption>
+        </figure>
+      </article>
+
+    </section>
+    <!-- / Services -->
+    <!-- Introduction -->
+    <section id="intro">
+
+      <article>
+        <figure>
+          <img src="img/demo/450x250.gif" width="450" height="250" alt="">
+          <figcaption>
+            <h2>Indonectetus facilis leo nibh</h2>
+            <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.
+              Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+            <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.
+              Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+            <footer class="more">
+              <a href="#">Read More &raquo;</a>
+            </footer>
+          </figcaption>
+        </figure>
+      </article>
+
+    </section>
+    <!-- / Introduction -->
+  </main>
+  <!-- / Main Content -->
+  <!-- / Content -->
+  <!-- Footer -->
+  <div id="footer">
+    <!-- Section One -->
+    <section>
+      <h2>Footer Start - Link Block</h2>
       <nav>
         <ul>
-          <li><a href="#">Text Link</a></li>
-          <li><a href="#">Text Link</a></li>
-          <li><a href="#">Text Link</a></li>
-          <li><a href="#">Text Link</a></li>
-          <li><a href="#">Text Link</a></li>
+          <li><a href="#">Lorem ipsum dolor sit</a></li>
+          <li><a href="#">Amet consectetur</a></li>
+          <li><a href="#">Praesent vel sem id</a></li>
+          <li><a href="#">Curabitur hendrerit est</a></li>
+          <li class="last"><a href="#">Sed a nulla urna</a></li>
         </ul>
       </nav>
-    </header>
-  </div>
-
-  <!-- Content -->
-  <div class="wrapper">
-
-    <!-- Container -->
-    <div class="container">
-
-      <!-- Slider -->
-      <section class="slider">
-        <a href="#"><img src="img/demo/960x360.gif" width="960" height="360" alt=""></a>
-      </section>
-
-      <!-- main content -->
-      <div id="homepage">
-
-        <!-- Services -->
-        <section id="services">
-
-          <article>
-            <figure>
-              <img src="img/demo/290x180.gif" width="290" height="180" alt="">
-              <figcaption>
-                <h2>Indonectetus facilis</h2>
-                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
-                <footer class="more">
-                  <a href="#">Read More &raquo;</a>
-                </footer>
-              </figcaption>
-            </figure>
-          </article>
-
-          <article>
-            <figure>
-              <img src="img/demo/290x180.gif" width="290" height="180" alt="">
-              <figcaption>
-                <h2>Indonectetus facilis</h2>
-                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
-                <footer class="more">
-                  <a href="#">Read More &raquo;</a>
-                </footer>
-              </figcaption>
-            </figure>
-          </article>
-
-          <article>
-            <figure>
-              <img src="img/demo/290x180.gif" width="290" height="180" alt="">
-              <figcaption>
-                <h2>Indonectetus facilis</h2>
-                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
-                <footer class="more">
-                  <a href="#">Read More &raquo;</a>
-                </footer>
-              </figcaption>
-            </figure>
-          </article>
-
-        </section>
-        <!-- / Services -->
-
-        <!-- Introduction -->
-        <section id="intro">
-
-          <article>
-            <figure>
-              <img src="img/demo/450x250.gif" width="450" height="250" alt="">
-              <figcaption>
-                <h2>Indonectetus facilis leo nibh</h2>
-                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. 
-                  Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
-                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. 
-                  Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
-                <footer class="more">
-                  <a href="#">Read More &raquo;</a>
-                </footer>
-              </figcaption>
-            </figure>
-          </article>
-
-        </section>
-        <!-- / Introduction -->
-
-      </div>
-      <!-- / Main Content -->
-
-    </div>
-    <!-- / Container -->
-
-  </div>
-  <!-- / Content -->
-
-
-  <!-- Footer -->
-  <div class="wrapper">
-    <div id="footer">
-      <!-- Section One -->
-      <section>
-        <h2>Footer Start - Link Block</h2>
-        <nav>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor sit</a></li>
-            <li><a href="#">Amet consectetur</a></li>
-            <li><a href="#">Praesent vel sem id</a></li>
-            <li><a href="#">Curabitur hendrerit est</a></li>
-            <li class="last"><a href="#">Sed a nulla urna</a></li>
-          </ul>
-        </nav>
-      </section>
-      <!-- Section Two -->
-      <section>
-        <h2>Link Block</h2>
-        <nav>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor sit</a></li>
-            <li><a href="#">Amet consectetur</a></li>
-            <li><a href="#">Praesent vel sem id</a></li>
-            <li><a href="#">Curabitur hendrerit est</a></li>
-            <li class="last"><a href="#">Sed a nulla urna</a></li>
-          </ul>
-        </nav>
-      </section>
-      <!-- Section Three -->
-      <section>
-        <h2>Link Block</h2>
-        <nav>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor sit</a></li>
-            <li><a href="#">Amet consectetur</a></li>
-            <li><a href="#">Praesent vel sem id</a></li>
-            <li><a href="#">Curabitur hendrerit est</a></li>
-            <li class="last"><a href="#">Sed a nulla urna</a></li>
-          </ul>
-        </nav>
-      </section>
-      <!-- Section Four -->
-      <section>
-        <h2>Link Block</h2>
-        <nav>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor sit</a></li>
-            <li><a href="#">Amet consectetur</a></li>
-            <li><a href="#">Praesent vel sem id</a></li>
-            <li><a href="#">Curabitur hendrerit est</a></li>
-            <li class="last"><a href="#">Sed a nulla urna</a></li>
-          </ul>
-        </nav>
-      </section>
-
-    </div>
+    </section>
+    <!-- Section Two -->
+    <section>
+      <h2>Link Block</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Lorem ipsum dolor sit</a></li>
+          <li><a href="#">Amet consectetur</a></li>
+          <li><a href="#">Praesent vel sem id</a></li>
+          <li><a href="#">Curabitur hendrerit est</a></li>
+          <li class="last"><a href="#">Sed a nulla urna</a></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Section Three -->
+    <section>
+      <h2>Link Block</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Lorem ipsum dolor sit</a></li>
+          <li><a href="#">Amet consectetur</a></li>
+          <li><a href="#">Praesent vel sem id</a></li>
+          <li><a href="#">Curabitur hendrerit est</a></li>
+          <li class="last"><a href="#">Sed a nulla urna</a></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Section Four -->
+    <section>
+      <h2>Link Block</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Lorem ipsum dolor sit</a></li>
+          <li><a href="#">Amet consectetur</a></li>
+          <li><a href="#">Praesent vel sem id</a></li>
+          <li><a href="#">Curabitur hendrerit est</a></li>
+          <li class="last"><a href="#">Sed a nulla urna</a></li>
+        </ul>
+      </nav>
+    </section>
   </div>
   <!-- Copyright -->
-  <div class="wrapper">
-    <footer id="copyright">
-      <p>Copyright &copy; 2020 - All Rights Reserved - <a href="#">Totally Unique</a></p>
-    </footer>
-  </div>
+  <footer id="copyright">
+    <p>Copyright &copy; 2020 - All Rights Reserved - <a href="#">Totally Unique</a></p>
+  </footer>
 </body>
 
 </html>
