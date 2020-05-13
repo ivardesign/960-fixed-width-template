@@ -45,9 +45,9 @@
       <h2>New Responsive Version of the 960-Fixed-Width Website</h2>
     </div>
     <nav id="main-nav" aria-label="Main Navigation">
-      <label for="hamburger" role="button">&#9776;</label>
+      <label for="hamburger" role="button" id="mainNavButton">&#9776;</label>
       <input type="checkbox" id="hamburger">
-      <ul id="nav-items" role="list"><!-- ' role="list" ' restores semantics for screen-readers
+      <ul id="nav-items" class="navItems hide" role="list"><!-- ' role="list" ' restores semantics for screen-readers
                                             when we use list-style:none in our CSS 
                                       -->
         <li><a href="#">Text Link</a></li>
@@ -196,6 +196,16 @@
   <footer id="copyright">
     <p>Copyright &copy; 2020 - All Rights Reserved - <a href="#">Totally Unique</a></p>
   </footer>
+
+  <script>
+    const btn = document.getElementById('mainNavButton');
+
+    btn.addEventListener('click', function() {
+      const hint = document.getElementById('nav-items');
+
+      hint.classList.toggle('hide');
+    });
+  </script>
 
 </body>
 

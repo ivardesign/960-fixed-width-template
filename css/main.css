@@ -44,7 +44,7 @@ html, body, figure {
 /* Break down menu items into vertical */
 #nav-items a {
   display: block;
-  padding: 1em;
+  padding: 1.5em;
   text-decoration: none;
   color: #fff;
 }
@@ -53,9 +53,18 @@ html, body, figure {
   background: #555;
 }
 
-/* Toggle Show/Hide Menu */
-#nav-items { 
-  display: none; 
+.navItems { 
+  visibility: visible;
+  opacity: 1;
+  max-height: 900px;
+  transition: visibility 0s, opacity 3s, max-height 0.5s linear;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0px;
+  transition: max-height 0.2s, opacity .01s, visibility 0.2s linear;
 }
 
 #main-nav input:checked ~ #nav-items { 
@@ -81,6 +90,13 @@ html, body, figure {
   #nav-items a {
     width: 100%;
     text-align: center;
+    padding: .5em 0;
+  }
+
+  .hide {
+    visibility: visible;
+    opacity: 1;
+    max-height: unset;
   }
 
 }

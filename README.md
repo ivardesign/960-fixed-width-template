@@ -24,9 +24,9 @@ I also wanted the smaller images to be at least 320px wide and
 all the images to be proportioned closer to a 'golden rectangle'
 proportion.
 
-I've added a CSS-only, hamburger-style menu which expands at a 
-768px wide screen to an inline list of links. This addition to 
-the stylesheet introduces my first breakpoint for media queries.
+I've added a hamburger-style menu which expands at a 768px wide
+screen to an inline list of links. This addition to the 
+stylesheet introduces my first breakpoint for media queries.
 
 The stylesheet already violates my rule for keeping media queries
 at the top of the stylesheet, although this may not be a real 
