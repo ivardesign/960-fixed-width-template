@@ -47,6 +47,7 @@ html, body, figure {
   padding: 1.5em;
   text-decoration: none;
   color: #fff;
+  text-align: center;
 }
 
 #nav-items a:hover, #main-nav label:hover {
