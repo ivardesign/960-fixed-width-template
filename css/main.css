@@ -13,9 +13,13 @@ html, body, figure {
   padding: 0;
 }
 
+h1, h2 {
+  font-weight: normal;
+}
+
 :root {
   --interface-background-color: #111;
-  --interface-background-hover-color: #333;
+  --interface-background-hover-color: rgb(214, 21, 37);
   --light-text-color: #fff;
 
   --hide-visibility: hidden;
@@ -63,11 +67,29 @@ html, body, figure {
   text-decoration: none;
 }
 
-/*     Mobile navigation     */
+figcaption h2 {
+  margin: 0;
+}
+
+/* #footer */
+#footer, #copyright {
+  background: var(--interface-background-color);
+  color: var(--light-text-color);
+}
+
+#footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+#footer li {
+  line-height: 2;
+}
+
+/*     Main navigation     */
 #main-nav {
   background: var(--interface-background-color);
   color: var(--light-text-color);
-  margin-bottom: 1em;
   line-height: 2;
 }
 
