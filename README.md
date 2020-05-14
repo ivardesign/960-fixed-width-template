@@ -28,9 +28,9 @@ I've added a hamburger-style menu which expands at a 768px wide
 screen to an inline list of links. This addition to the 
 stylesheet introduces my first breakpoint for media queries.
 
-The stylesheet already violates my rule for keeping media queries
-at the top of the stylesheet, although this may not be a real 
-'violation' because at this point, the styles are quite minimal. 
+Custom Properties and Media Queries are at the top of the style-
+sheet just below some resets.  Then follow some adjustments to
+margins and paddings to keep texts from rubbing edges. Mainly,
+the definitions are ordered in the same order as the DOM 
+elements flow, top to bottom, beginning with 'header'.
 
-Nevertheless, I will look at refactoring this before moving on 
-by studying whether it can be improved with Custom Properties.
