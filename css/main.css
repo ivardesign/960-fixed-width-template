@@ -165,7 +165,7 @@ figcaption h2 {
 
 /*     Main navigation     */
 #main-nav {
-  background: var(--dark-blue);
+  background: var(--black);
   color: var(--white);
   line-height: 2;
 }
