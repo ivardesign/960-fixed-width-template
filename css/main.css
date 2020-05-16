@@ -18,7 +18,7 @@ h1, h2 {
   --bronze: #a68e72;
   --dark-bronze: #574633;
   --gray: #a8b0c7;
-  --gray-hsla: hsla(225, 22%, 72%, 30%);
+  --gray-hsla: hsla(225, 22%, 72%, 50%);
   --white: #fffff7;
   --black: #000216;
 
@@ -101,11 +101,19 @@ a {
 
 .hero {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero img {
-  width: 100%;
-  height: auto;
+.hero-cta {
+  max-width: 300px;
+  padding: 1em;
+  background: var(--gray-hsla);
+  border-radius: 5px;
+}
+
+.hero-cta p {
+  font-size: 130%;
 }
 
 figure img {
