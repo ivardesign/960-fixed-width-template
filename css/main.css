@@ -18,7 +18,7 @@ h1, h2 {
   --bronze: #a68e72;
   --dark-bronze: #574633;
   --gray: #a8b0c7;
-  --gray-hsla: hsla(225, 22%, 72%, 50%);
+  --gray-hsla: hsla(225, 22%, 92%, 75%);
   --white: #fffff7;
   --black: #000216;
 
@@ -109,7 +109,9 @@ a {
   max-width: 36em;
   padding: 1em;
   background: var(--gray-hsla);
+  border: 1px solid var(--gray-hsla);
   border-radius: 5px;
+  box-shadow: var(--box-shadow);
 }
 
 .hero-cta p {
