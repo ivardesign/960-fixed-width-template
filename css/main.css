@@ -56,6 +56,8 @@ h1, h2 {
     --nav-items-a-padding: .5em 0;
 
     --intro-figure-gridTemplateAreas: "text image";
+
+    --footer-grid-auto-flow: column;
   }
 }
 
@@ -195,6 +197,11 @@ figcaption h2 {
 #footer, #copyright {
   background: var(--black);
   color: var(--gray);
+}
+
+#footer {
+  display: grid;
+  grid-auto-flow: var(--footer-grid-auto-flow, unset);
 }
 
 #footer ul {
