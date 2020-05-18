@@ -106,14 +106,15 @@ a {
 }
 
 .hero-cta {
-  max-width: 300px;
+  max-width: 36em;
   padding: 1em;
   background: var(--gray-hsla);
   border-radius: 5px;
 }
 
 .hero-cta p {
-  font-size: 130%;
+  font-size: clamp(1em, 3vw, 2.5em);
+  margin: 1em;
 }
 
 figure img {
