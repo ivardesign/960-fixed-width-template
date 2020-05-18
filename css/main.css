@@ -106,8 +106,7 @@ a {
 }
 
 .hero-cta {
-  max-width: 36em;
-  padding: 1em;
+  width: clamp(280px, 36em, 80%);
   background: var(--gray-hsla);
   border: 1px solid var(--gray-hsla);
   border-radius: 5px;
@@ -116,6 +115,10 @@ a {
 
 .hero-cta p {
   font-size: clamp(1em, 3vw, 2.5em);
+  margin: 1em;
+}
+
+.hero-cta .more {
   margin: 1em;
 }
 
