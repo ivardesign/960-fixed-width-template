@@ -128,7 +128,7 @@ a {
 }
 
 .hero-cta {
-  width: clamp(280px, 36em, 80%);
+  width: clamp(250px, 36em, 80%);
   background: var(--gray-hsla);
   border: 1px solid var(--gray-hsla);
   border-radius: 5px;
