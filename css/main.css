@@ -165,8 +165,9 @@ figcaption h2 {
 #services figure {
   background: white;
   width: max-content;
-  padding: .25em;
-  margin: 2em 5px;
+  width: -moz-fit-content;
+  padding: 2em .25em;
+  margin: 2em .25em;
   border: 1px solid var(--gray-hsla);
   border-radius: 5px;
 }
