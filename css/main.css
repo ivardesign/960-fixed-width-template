@@ -42,16 +42,32 @@
     --nav-items-display: flex;
     --nav-items-a-padding: .5em 0;
 
+    --services-figure-max-width: 305px;
+
     --intro-figure-gridTemplateAreas: "text image";
 
     --footer-grid-auto-flow: column;
   }
+
+  html {
+    font-size: 18px;
+  }
+
+  #intro img {
+    min-width: 450px;
+  }
+
 }
 
 @media screen and (min-width: 1800px) {
+  :root {
+    --services-figure-max-width: unset;
+  }
+
   html {
     font-size: min(max(1rem, 4vw), 26px);
   }
+
 }
 
 *, *:before, *:after, html {
@@ -166,6 +182,7 @@ figcaption h2 {
   background: white;
   width: fit-content;
   width: -moz-fit-content;
+  max-width: var(--services-figure-max-width, unset);
   padding: 2em .25em;
   margin: 2em .25em;
   border: 1px solid var(--gray-hsla);
