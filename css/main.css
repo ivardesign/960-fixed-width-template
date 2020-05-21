@@ -31,7 +31,9 @@
     --flex-wrap-wrap: wrap;
 
     --header-flex-direction: row;
+    --header-justify-content: space-between;
     --header-align-items: center;
+    --header-min-height: auto;
 
     --hide-visibility: visible;
     --hide-opacity: 1;
@@ -100,8 +102,9 @@ nav, p, figcaption, .more {
   background: var(--black);
   display: flex;
   flex-direction: var(--header-flex-direction, column);
-  justify-content: space-between;
+  justify-content: var(--header-justify-content, center);
   align-items: var(--header-align-items, unset);
+  min-height: var(--header-min-height, 89vh);
 }
 
 #hgroup {
