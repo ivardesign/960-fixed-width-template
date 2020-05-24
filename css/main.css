@@ -40,7 +40,7 @@
     --hide-max-height: unset;
 
     --main-nav-label-display: none;
-    --main-nav-margin-right: 1em;
+    --main-nav-padding-right: 1em;
     --nav-items-display: flex;
     --nav-items-a-padding: .5em 0;
 
@@ -156,20 +156,25 @@ nav, p, figcaption, .more {
   border: 1px solid var(--gray-hsla);
   border-radius: 5px;
   box-shadow: var(--box-shadow);
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .hero-cta p {
   font-size: clamp(1em, 3vw, 2.5em);
-  margin: 1em;
+  margin: 1em 0;
+  padding: 0 1em
 }
 
 .hero-cta .more {
-  margin: 1em;
+  margin: 1em 0;
+  padding: 0 1em;
 }
 
 figure img {
-  margin: auto;
   display: block;
+  border-radius: 5px;
+  align-self: center;
 }
 
 figcaption h2 {
@@ -182,16 +187,18 @@ figcaption h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 3em auto;
+  gap: 1em;
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 
 .featured-items figure {
+  display: flex;
+  flex-direction: column;
   background: white;
   width: fit-content;
   width: -moz-fit-content;
   max-width: var(--services-figure-max-width, unset);
-  padding: 2em .25em;
-  margin: 2em .25em;
   border: 1px solid var(--gray-hsla);
   border-radius: 5px;
 }
@@ -202,7 +209,8 @@ figcaption h2 {
 
 /* .featured-article */
 .featured-article {
-  padding-bottom: 5em;
+  margin-top: 5em;
+  margin-bottom: 8em;
 }
 
 .featured-article figure {
@@ -210,8 +218,7 @@ figcaption h2 {
   grid-template-areas: var(--intro-figure-gridTemplateAreas);
   gap: 1em;
   padding: 0 1em;
-  max-width: 960px;
-  margin: auto;
+  justify-content: center;
 }
 
 .featured-article img {
@@ -255,7 +262,7 @@ figcaption h2 {
   color: var(--white);
   line-height: 2;
   flex-grow: var(--flex-grow-1, unset);
-  margin-right: var(--main-nav-margin-right, 0)
+  padding-right: var(--main-nav-padding-right, 0)
 }
 
 /* Hamburger Icon */
