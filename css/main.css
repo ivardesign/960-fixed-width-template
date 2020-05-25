@@ -161,7 +161,7 @@ nav, p, figcaption, .more {
 }
 
 .hero-cta p {
-  font-size: clamp(1em, 3vw, 2.5em);
+  font-size: clamp(1em, 2vw, 2em);
   margin: 1em 0;
   padding: 0 1em
 }

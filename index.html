@@ -41,9 +41,10 @@
     <nav class="main-nav" aria-label="Main Navigation">
       <label for="hamburger" role="button" id="mainNavButton">&#9776;</label>
       <input type="checkbox" class="hamburger">
-      <ul id="nav-items" class="navItems hide" role="list"><!-- ' role="list" ' restores semantics for screen-readers
-                                            when we use list-style:none in our CSS 
-                                      -->
+      <ul id="nav-items" class="navItems hide" role="list">
+        <!-- ' role="list" ' restores semantics for screen-readers
+               when we use list-style:none in our CSS 
+        -->
         <li><a href="#">Text Link</a></li>
         <li><a href="#">Text Link</a></li>
         <li><a href="#">Text Link</a></li>
@@ -56,6 +57,14 @@
   <!-- Hero -->
   <section id="hero-1" class="hero">
     <!-- img src="img/bg-bike-oyma_power-with_rider.jpg" width="960" height="960" alt="" -->
+    <!-- 
+      Don't like background images? Also, on responsive images:
+      eg.: <img src="small.jpg" srcset="medium.jpg 1000w, large.jpg 2000w" alt="">
+      + What about setting 'width=x' and 'height=x' when using srcset?
+      + Now I'd have to do some z-index and positioning stuff to get my CTA on top of the image properly.
+      
+      What about using Scroll Snap here to make it a 'slider'?
+    -->
     <div class="hero-cta">
       <p>Due to the dramatic increase in sales during the COVID-19 epidemic, we're currently sold out of all models. To place a waiting-list order...</p>
       <footer class="more">
@@ -69,6 +78,9 @@
 
     <!-- Featured Items -->
     <section id="featured-items" class="featured-items">
+      <!--
+        What about Scroll Snap here?  I'd recommend using Scroll Snap sparingly.
+      -->
 
       <article>
         <figure>
