@@ -94,6 +94,7 @@ html {
 
 a {
   color: var(--med-blue);
+  transition: all .15s ease-in-out;
 }
 
 nav, p, figcaption, .more {
@@ -103,6 +104,10 @@ nav, p, figcaption, .more {
 .more {
   display: block;
   text-align: right;
+}
+
+.more a:hover {
+  color: var(--dark-bronze);
 }
 
 figure img {
@@ -343,5 +348,9 @@ figcaption h2 {
 
 .site-footer a, .copyright a {
   color: var(--white);
+}
+
+.site-footer a:hover, .copyright a:hover {
+  color: var(--bronze);
 }
 /* / .site-footer */
