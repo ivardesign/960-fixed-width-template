@@ -21,8 +21,7 @@
   --nav-items-display: block;
   --nav-items-a-padding: 1.5em;
 
-  --intro-figure-gridTemplateAreas: "image"
-                                    "text";
+  --intro-figure-gridTemplateAreas: "image" "text";
 }
 
 @media screen and (min-width: 768px) {
@@ -72,6 +71,9 @@
 
 }
 
+
+
+/* general styles */
 *, *:before, *:after, html {
   box-sizing: border-box;
 }
@@ -98,6 +100,26 @@ nav, p, figcaption, .more {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.more {
+  display: block;
+  text-align: right;
+}
+
+figure img {
+  display: block;
+  border-radius: 5px;
+  align-self: center;
+}
+
+figcaption h2 {
+  color: var(--dark-bronze);
+  margin: 0;
+}
+/* / general styles */
+
+
+
+/* .header */
 .site-header {
   background: var(--black);
   display: flex;
@@ -114,11 +136,6 @@ nav, p, figcaption, .more {
 
 .hgroup, figcaption, .site-footer section, .copyright {
   padding: 1em;
-}
-
-.more {
-  display: block;
-  text-align: right;
 }
 
 .hgroup h1 {
@@ -138,125 +155,7 @@ nav, p, figcaption, .more {
   text-decoration: none;
 }
 
-#hero-1 {
-  background: url('../img/bg-bike-oyma_power-with_rider.jpg') no-repeat 65% center;
-  background-size: cover;
-  min-height: 72vh;
-}
-
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-cta {
-  width: clamp(250px, 36em, 80%);
-  background: var(--gray-hsla);
-  border: 1px solid var(--gray-hsla);
-  border-radius: 5px;
-  box-shadow: var(--box-shadow);
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-.hero-cta p {
-  font-size: clamp(1em, 2vw, 2em);
-  margin: 1em 0;
-  padding: 0 1em
-}
-
-.hero-cta .more {
-  margin: 1em 0;
-  padding: 0 1em;
-}
-
-figure img {
-  display: block;
-  border-radius: 5px;
-  align-self: center;
-}
-
-figcaption h2 {
-  color: var(--dark-bronze);
-  margin: 0;
-}
-
-/* .featured-items */
-.featured-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 1em;
-  margin-top: 3em;
-  margin-bottom: 3em;
-}
-
-.featured-items figure {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  width: fit-content;
-  width: -moz-fit-content;
-  max-width: var(--services-figure-max-width, unset);
-  border: 1px solid var(--gray-hsla);
-  border-radius: 5px;
-}
-
-.featured-items figure:hover {
-  box-shadow: var(--box-shadow);
-}
-
-/* .featured-article */
-.featured-article {
-  margin-top: 5em;
-  margin-bottom: 8em;
-}
-
-.featured-article figure {
-  display: grid;
-  grid-template-areas: var(--intro-figure-gridTemplateAreas);
-  gap: 1em;
-  padding: 0 1em;
-  justify-content: center;
-}
-
-.featured-article img {
-  grid-area: image;
-  width: clamp(100%, 450px, 100%);
-}
-
-.featured-article figcaption {
-  grid-area: text;
-  max-width: 28em;
-  margin: auto;
-}
-
-/* .site-footer */
-.site-footer, .copyright {
-  background: var(--black);
-  color: var(--gray);
-}
-
-.site-footer {
-  display: grid;
-  grid-auto-flow: var(--footer-grid-auto-flow, unset);
-}
-
-.site-footer ul {
-  list-style: none;
-  padding: 0;
-}
-
-.site-footer li {
-  line-height: 2;
-}
-
-.site-footer a, .copyright a {
-  color: var(--white);
-}
-
-/*     Main navigation     */
+/* Main navigation */
 .main-nav {
   background: var(--black);
   color: var(--white);
@@ -323,4 +222,126 @@ figcaption h2 {
   display: var(--nav-items-display);
   flex-wrap: var(--flex-wrap-wrap, unset); 
 }
-/*    / Mobile navigation     */
+/* / Mobile navigation */
+/* / .header */
+
+
+
+/* Hero's */
+#hero-1 {
+  background: url('../img/bg-bike-oyma_power-with_rider.jpg') no-repeat 65% center;
+  background-size: cover;
+  min-height: 72vh;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-cta {
+  width: clamp(250px, 36em, 80%);
+  background: var(--gray-hsla);
+  border: 1px solid var(--gray-hsla);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.hero-cta p {
+  font-size: clamp(1em, 2vw, 2em);
+  margin: 1em 0;
+  padding: 0 1em
+}
+
+.hero-cta .more {
+  margin: 1em 0;
+  padding: 0 1em;
+}
+/* / Hero's */
+
+
+
+/* .featured-items */
+.featured-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.featured-items figure {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: fit-content;
+  width: -moz-fit-content;
+  max-width: var(--services-figure-max-width, unset);
+  border: 1px solid var(--gray-hsla);
+  border-radius: 5px;
+}
+
+.featured-items figure:hover {
+  box-shadow: var(--box-shadow);
+}
+/* / .featured-items */
+
+
+
+/* .featured-article */
+.featured-article {
+  margin-top: 5em;
+  margin-bottom: 8em;
+}
+
+.featured-article figure {
+  display: grid;
+  grid-template-areas: var(--intro-figure-gridTemplateAreas);
+  gap: 1em;
+  padding: 0 1em;
+  justify-content: center;
+}
+
+.featured-article img {
+  grid-area: image;
+  width: clamp(100%, 450px, 100%);
+}
+
+.featured-article figcaption {
+  grid-area: text;
+  max-width: 28em;
+  margin: auto;
+}
+/* / .featured-article */
+
+
+
+
+/* .site-footer */
+.site-footer, .copyright {
+  background: var(--black);
+  color: var(--gray);
+}
+
+.site-footer {
+  display: grid;
+  grid-auto-flow: var(--footer-grid-auto-flow, unset);
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-footer li {
+  line-height: 2;
+}
+
+.site-footer a, .copyright a {
+  color: var(--white);
+}
+/* / .site-footer */
