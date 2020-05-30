@@ -1,0 +1,130 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header p {
+    font-size: 1.5rem;
+}
+
+.max-width-38em {
+    max-width: 38em;
+}
+
+section h2 {
+    font-weight: normal;
+}
+
+.container {
+    background: #777482;
+    border: 3px solid #f82323;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    margin-bottom: 3em;
+    font-size: 2rem;
+}
+
+.flex-container {
+    display: flex;
+    background: #777482;
+    border: 3px solid #f82323;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    margin-bottom: 3em;
+    font-size: 2rem;
+}
+
+.container p, .flex-container p {
+    font-size: 1.3rem;
+    border: 3px dotted #f8de4c;
+    background: black;
+}
+
+header {
+    margin: 0 auto;
+    padding: 2em;
+    color: #fff;
+    background: #444;
+}
+
+header span, header h2 {
+    color: #f8de4c;
+}
+
+section {
+    max-width: 66em;
+    background: #fff;
+}
+
+section {
+    border-bottom: 1px dashed #f83f23;
+    margin: 3em auto;
+    padding: 1em 1em 2em;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.toggles {
+    margin: 0 auto 5em;
+    padding: 1em 2em 2em;
+    color: #fff;
+    background: #222;
+    position: sticky;
+    top: 0;
+}
+
+.toggles h3 {
+    font-weight: normal;
+    font-size: 1rem;
+    margin: 0 0 1.5em;
+}
+
+.toggles button, .toggles .button {
+    border: none;
+    font-size: 1rem;
+    padding: .75em 1em;
+    background: #6944f0;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: .4em;
+    display: inline-block;
+}
+
+.toggles button:hover, .toggles .button:hover, .checked {
+    background: #f83f23 !important;
+}
+
+.toggles button span, .toggles .button span {
+    font-weight: 700;
+}
+
+.displayNone {
+    display: none;
+}
+
+.rtlDir {
+    direction: rtl;
+}
+
+.flexDirectionRow {
+    flex-direction: row;
+}
+
+.flexDirectionRow-reverse {
+    flex-direction: row-reverse;
+}
+
+.flexDirectionColumn {
+    flex-direction: column;
+}
+
+.flexDirectionColumn-reverse {
+    flex-direction: column-reverse;
+}

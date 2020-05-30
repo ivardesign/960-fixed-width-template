@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Default 'display: flex;' behavior and comparison</title>
-  <meta name="description" content="Demonstration of a flex container with default settings; no other adjustments than 'display: flex'. This also compares with non-flex containers and effects on various flex-items such as block and inline items in each.">
+  <title>'flex-direction'</title>
+  <meta name="description" content="Demonstration of flex-direction row and column behavior and comparison">
   <link rel="stylesheet" href="./css/demo/base.css">
   
 </head>
@@ -13,42 +13,43 @@
 
   <header>
     <h1>CSS <span>Flex</span>ible <span>Box</span> Module</h1>
-    <h2>display: flex</h2>
-    <p class="max-width-38em">Demonstration of a flex container with default settings; no flexbox declarations other than 'display: flex'. This also compares with non-flex containers and effects on various flex-items such as block and inline items in each.</p>      
-    <p class="max-width-38em">In these English (left-to-right, top to bottom flow) demonstrations the default behavior shows how:</p>
+    <h2>flex-direction: (row, row-reverse, column, column-reverse)</h2>
+    <p class="max-width-38em">Demonstration of a "flex-direction". This also compares with non-flex containers and effects on various flex-items such as block and inline items in each.</p>      
+    <p class="max-width-38em">The flex direction default is 'row' ("flex-direction: row;").  Use the navigation below to toggle between row and column directions to see how:</p>
     <ul class="max-width-38em">
-      <li>the main axis flex-direction (default: row) justification (default: flex-start) aligns items to the left edge (the start line),</li>
-      <li>the flex-items can shrink in width compared with non-flex containers, where a DIV will be 100% width,</li>
-      <li>flexible box module honors whitespace when between alpha-numeric characters,</li>
-      <li>inherited margins from the P elements are kept,</li>
-      <li>flex-items can break out of their container when the container is too narrow.</li>
+      <li>the main axis flex-direction justification (kept at default: flex-start) aligns items to the start line,</li>
+      <li>the difference between 'flex-direction: row' and 'flex-direction: column' layout.</li>
+      <li>when the dir is rtl, the justification and/or flex-start line changes</li>
     </ul>
 
   </header>
 
   <nav class="toggles">
     <h3>Display Properties</h3>
-    <button id="dirToggle">HTML directionality: <span>ltr</span></button>
+    <button id="dirToggle">HTML directionality: <span id="dirSpan">ltr</span></button>
+    <button id="flexDirection">CSS flex-direction: <span id="flexDirSpan">row</span></button>   
+    <label id="flexDirRevButton" class="button" for="flexDirectionReversed">row-reverse/column-reverse</label>
+    <input id="flexDirectionReversed" class="displayNone" type="checkbox">
   </nav>
 
 
   <section>
-    <h2>DIV container with image items</h2>
+    <h2>Non-flex container with image items</h2>
     <div class="container">
+      <img src="./img/demo/Screw_Head_-_Triple_Square.svg" width="50" height="50" alt="">
+      <img src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
+      <img src="./img/demo/square-outline.svg" width="50" height="50" alt="">
       <img src="./img/demo/image.svg" width="50" height="50" alt="">
-      <img src="./img/demo/image.svg" width="50" height="50" alt="">
-      <img src="./img/demo/image.svg" width="50" height="50" alt="">
-      <img src="./img/demo/image.svg" width="50" height="50" alt="">
-      <img src="./img/demo/image.svg" width="50" height="50" alt="">
+      <img src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
     </div>
     
-    <h2>DIV container with default flex settings (style="display: flex;") with image items</h2>
-    <div style="display: flex;" class="container">
+    <h2>Flex container with image items</h2>
+    <div class="flex-container flexDirectionRow">
+      <img src="./img/demo/Screw_Head_-_Triple_Square.svg" width="50" height="50" alt="">
+      <img src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
+      <img src="./img/demo/square-outline.svg" width="50" height="50" alt="">
       <img src="./img/demo/image.svg" width="50" height="50" alt="">
-      <img src="./img/demo/image.svg" width="50" height="50" alt="">
-      <img src="./img/demo/image.svg" width="50" height="50" alt="">
-      <img src="./img/demo/image.svg" width="50" height="50" alt="">
-      <img src="./img/demo/image.svg" width="50" height="50" alt="">
+      <img src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
     </div>      
   </section>
 
@@ -56,7 +57,7 @@
 
 
   <section>
-    <h2>DIV container with DIV's (with background-color and numbers)</h2>
+    <h2>Non-flex container with DIV's</h2>
     <div class="container">
       <div style="background-color: #1cb3ca;">1</div>
       <div style="background-color: #6944f0;">2</div>
@@ -65,8 +66,8 @@
       <div style="background-color: #1cb3ca;">5</div>
     </div>
     
-    <h2>DIV container with default flex settings (style="display: flex;") with DIV's (with   background-color and numbers)</h2>
-    <div style="display: flex;" class="container">
+    <h2>Flex container with DIV's</h2>
+    <div class="flex-container flexDirectionRow">
       <div style="background-color: #1cb3ca;">1</div>
       <div style="background-color: #6944f0;">2</div>
       <div style="background-color: #1cb3ca;">3</div>
@@ -79,23 +80,23 @@
    
 
   <section>
-    <h2>DIV container with numbers (with spaces between numbers)</h2>
+    <h2>Non-flex container (with spaces between numbers)</h2>
     <div class="container">
       0 1 2 3 4 5 6 7 8 9
     </div>
 
-    <h2>DIV container with default flex settings (style="display: flex;") with numbers (with spaces between numbers)</h2>
-    <div style="display: flex;" class="container">
+    <h2>Flex container (with spaces between numbers)</h2>
+    <div class="flex-container flexDirectionRow">
       0 1 2 3 4 5 6 7 8 9
     </div>
 
-    <h2>DIV container with numbers (no spaces)</h2>
+    <h2>Non-flex container (no spaces)</h2>
     <div class="container">
       0123456789
     </div>
   
-    <h2>DIV container with default flex settings (style="display: flex;") with numbers (no spaces)</h2>
-    <div style="display: flex;" class="container">
+    <h2>Flex container (no spaces)</h2>
+    <div class="flex-container flexDirectionRow">
       0123456789
     </div>      
   </section>
@@ -104,7 +105,7 @@
   
 
   <section>
-    <h2>DIV container with paragraphs (with border on each paragraph)</h2>
+    <h2>Non-flex container with paragraphs</h2>
     <div class="container">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus odio vitae urna luctus auctor. Nam sit amet eros quam. Vestibulum dictum est at iaculis aliquam.</p>
       <p>Fusce tincidunt rhoncus ipsum, eu maximus turpis pulvinar et. Nullam pretium pharetra ante, in accumsan velit facilisis et.</p>
@@ -113,9 +114,9 @@
       <p>Pellentesque feugiat pulvinar turpis, non ultricies quam ultrices eu. Aliquam velit dolor, aliquam id nisl a, interdum volutpat erat.</p>
     </div>
 
-    <h2>DIV container with default flex settings (style="display: flex;") with paragraphs (with border on each paragraph)</h2>
+    <h2>Flex container with paragraphs</h2>
     <p class="max-width-38em">Note how the items in the following container will break out of the container on a small screen width.</p>
-    <div style="display: flex;" class="container">
+    <div class="flex-container flexDirectionRow">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus odio vitae urna luctus auctor. Nam sit amet eros quam. Vestibulum dictum est at iaculis aliquam.</p>
       <p>Fusce tincidunt rhoncus ipsum, eu maximus turpis pulvinar et. Nullam pretium pharetra ante, in accumsan velit facilisis et.</p>
       <p>Vivamus leo sapien, cursus id venenatis a, efficitur sed dui. Pellentesque rhoncus lectus a dui semper tincidunt. Suspendisse interdum finibus augue, vitae blandit mauris mollis nec. Curabitur id viverra risus.</p>
