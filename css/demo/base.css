@@ -122,3 +122,7 @@ section:last-of-type {
 .flexDirectionColumn-reverse {
     flex-direction: column-reverse;
 }
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
