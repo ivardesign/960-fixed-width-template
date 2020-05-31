@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flex Items - 'order'</title>
+  <meta name="description" content="Demonstration of flex-wrap">
+  <link rel="stylesheet" href="./css/demo/base.css">
+  <style>
+    pre {
+      overflow: auto;
+      margin: 0;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      color: #f8de4c;
+      line-height: 1.66;
+    }
+    .container div {
+      width: 50px;
+      height: 50px;
+      border: 2px dotted #f8de4c;
+    }
+    .display-flex {
+      flex-flow: row wrap;
+    }
+    .putThisFirst {
+      order: -1;
+    }
+
+  </style>
+  
+</head>
+<body>
+
+
+  <header>
+    <h1>CSS <span>Flex</span>ible <span>Box</span> Module</h1>
+    <h2>Flex Items - 'order'</h2>
+    <p class="max-width-38em">Demonstration of "order".</p>      
+  </header>
+
+  <nav class="toggles">
+    <h3>Flex Item Properties</h3>
+    <p>This button will apply the following class to the #10 container:</p>
+    <pre>
+      <code>
+        .putThisFirst {
+          order: -1;
+        }
+      </code>
+    </pre>
+
+    <label id="orderToggle" class="button" for="putThisFirst">Change Order</label>
+    <input id="putThisFirst" class="displayNone" type="checkbox">
+  </nav>
+
+
+  <section>    
+    <h2>Flex container with DIV's</h2>
+    <div class="container display-flex">
+      <div style="background-color: #1cb3ca;">1</div>
+      <div style="background-color: #6944f0;">2</div>
+      <div style="background-color: #1cb3ca;">3</div>
+      <div style="background-color: #6944f0;">4</div>
+      <div style="background-color: #1cb3ca;">5</div>
+      <div style="background-color: #1cb3ca;">6</div>
+      <div style="background-color: #6944f0;">7</div>
+      <div style="background-color: #1cb3ca;">8</div>
+      <div style="background-color: #6944f0;">9</div>
+      <div id="moveThisOne" style="background-color: #f82323;">10</div>
+    </div>      
+  </section>
+
+
+  <script type="text/javascript">
+    // order
+    const orderBtn = document.getElementById('orderToggle');
+    const moveThis = document.getElementById('moveThisOne');
+    let orderBtnChecked = false;
+  
+    orderBtn.addEventListener('click', function () {
+      moveThis.classList.toggle('putThisFirst');
+      orderBtn.classList.toggle('checked');
+  
+      if (orderBtnChecked == true) {
+        orderBtnChecked = false;
+      } else {
+        orderBtnChecked = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
