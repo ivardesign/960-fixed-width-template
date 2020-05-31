@@ -7,14 +7,6 @@
   <meta name="description" content="Demonstration of flex-wrap">
   <link rel="stylesheet" href="./css/demo/base.css">
   <style>
-    pre {
-      overflow: auto;
-      margin: 0;
-      margin-block-start: 0;
-      margin-block-end: 0;
-      color: #f8de4c;
-      line-height: 1.66;
-    }
     .container div {
       width: 50px;
       height: 50px;
@@ -23,8 +15,20 @@
     .display-flex {
       flex-flow: row wrap;
     }
-    .putThisFirst {
-      order: -1;
+    .order-1 {
+      order: -1 !important;
+    }
+    .order0 {
+      order: 0 !important;
+    }
+    .order1 {
+      order: 1 !important;
+    }
+    .order2 {
+      order: 2 !important;
+    }
+    .order3 {
+      order: 3 !important;
     }
 
   </style>
@@ -41,53 +45,93 @@
 
   <nav class="toggles">
     <h3>Flex Item Properties</h3>
-    <p>This button will apply the following class to the #10 container:</p>
-    <pre>
-      <code>
-        .putThisFirst {
-          order: -1;
-        }
-      </code>
-    </pre>
-
-    <label id="orderToggle" class="button" for="putThisFirst">Change Order</label>
-    <input id="putThisFirst" class="displayNone" type="checkbox">
+    <p>These buttons will apply the order property to the #9 flex-item:</p>
+    <p>Flex items have a default order value of 0, therefore items with an integer value greater than 0 will be displayed after any items that have not been given an <b>explicit order value</b>. Each of the items in this demo have been assigned an order value from 0 to 9 in order.</p>
+    <p>You can also use negative values with order, which can be quite useful. If you want to make one item display first, and leave the order of all other items unchanged, you can give that item an order of -1. As this is lower than 0 the item will always be displayed first.</p>
+    <button class="toggle" id="order-1Toggle">order: -1</button>
+    <button class="toggle" id="order0Toggle">order: 0</button>
+    <button class="toggle" id="order1Toggle">order: 1</button>
+    <button class="toggle" id="order2Toggle">order: 2</button>
+    <button class="toggle" id="order3Toggle">order: 3</button>
+    <button class="toggle" id="reset">Reset</button>
   </nav>
 
 
   <section>    
     <h2>Flex container with DIV's</h2>
     <div class="container display-flex">
-      <div style="background-color: #1cb3ca;">1</div>
-      <div style="background-color: #6944f0;">2</div>
-      <div style="background-color: #1cb3ca;">3</div>
-      <div style="background-color: #6944f0;">4</div>
-      <div style="background-color: #1cb3ca;">5</div>
-      <div style="background-color: #1cb3ca;">6</div>
-      <div style="background-color: #6944f0;">7</div>
-      <div style="background-color: #1cb3ca;">8</div>
-      <div style="background-color: #6944f0;">9</div>
-      <div id="moveThisOne" style="background-color: #f82323;">10</div>
+      <div style="background-color: #1cb3ca; order: 0;">0</div>
+      <div style="background-color: #6944f0; order: 1;">1</div>
+      <div style="background-color: #1cb3ca; order: 2;">2</div>
+      <div style="background-color: #6944f0; order: 3;">3</div>
+      <div style="background-color: #1cb3ca; order: 4;">4</div>
+      <div style="background-color: #1cb3ca; order: 5;">5</div>
+      <div style="background-color: #6944f0; order: 6;">6</div>
+      <div style="background-color: #1cb3ca; order: 7;">7</div>
+      <div style="background-color: #6944f0; order: 8;">8</div>
+      <div style="background-color: #f82323; order: 9;" id="moveThisOne">9</div>
     </div>      
   </section>
 
 
   <script type="text/javascript">
     // order
-    const orderBtn = document.getElementById('orderToggle');
+    const buttonList = document.getElementsByClassName('toggle');
+    const orderMinus1Btn = document.getElementById('order-1Toggle');
+    const order0Btn = document.getElementById('order0Toggle');
+    const order1Btn = document.getElementById('order1Toggle');
+    const order2Btn = document.getElementById('order2Toggle');
+    const order3Btn = document.getElementById('order3Toggle');
     const moveThis = document.getElementById('moveThisOne');
-    let orderBtnChecked = false;
-  
-    orderBtn.addEventListener('click', function () {
-      moveThis.classList.toggle('putThisFirst');
-      orderBtn.classList.toggle('checked');
-  
-      if (orderBtnChecked == true) {
-        orderBtnChecked = false;
-      } else {
-        orderBtnChecked = true;
+    const resetBtn = document.getElementById('reset');
+
+    function unCheck() {
+      let itemVal = -1;
+
+      for (let i = 0; i < buttonList.length; i++) {                 
+        buttonList[i].classList.remove('checked'); 
+        let order = 'order' + itemVal;
+                
+        moveThis.classList.remove(order); 
+        itemVal++;
       }
+    }
+
+    orderMinus1Btn.addEventListener('click', function () {
+      unCheck();
+      moveThis.classList.add('order-1');
+      orderMinus1Btn.classList.add('checked');
     });
+
+    order0Btn.addEventListener('click', function () {
+      unCheck();
+      moveThis.classList.add('order0');
+      order1Btn.classList.add('checked');
+    });
+    
+    order1Btn.addEventListener('click', function () {
+      unCheck();
+      moveThis.classList.add('order1');
+      order1Btn.classList.add('checked');
+    });
+    
+    order2Btn.addEventListener('click', function () {
+      unCheck();
+      moveThis.classList.add('order2');
+      order2Btn.classList.add('checked');
+    });
+
+    order3Btn.addEventListener('click', function () {
+      unCheck();
+      moveThis.classList.add('order3');
+      order3Btn.classList.add('checked');
+    });
+
+    resetBtn.addEventListener('click', function() {
+      unCheck();
+    });
+
+
   </script>
 
 </body>
