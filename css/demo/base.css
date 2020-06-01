@@ -83,6 +83,13 @@ section:last-of-type {
     margin: 0 0 1.5em;
 }
 
+.toggles h4 {
+    font-weight: normal;
+    margin: 0;
+    font-size: .9rem;
+    color: #f8de4c;
+} 
+
 button {
     border: none;
     font-size: 1rem;
@@ -134,7 +141,7 @@ button {
 
 
 
-/* justify-content */
+/* flex justify-content */
 .flex-start {
     justify-content: flex-start;
 }
@@ -157,4 +164,34 @@ button {
 
 .space-evenly {
     justify-content: space-evenly;
+}
+
+/* flex align-items */
+.alignItems-flex-start {
+    align-items: flex-start;
+}
+.alignItems-self-start {
+    align-items: self-start;
+}
+.alignItems-start {
+    align-items: start;
+}
+
+.alignItems-flex-end {
+    align-items: flex-end;
+}
+.alignItems-self-end {
+    align-items: self-end;
+}
+.alignItems-end {
+    align-items: end;
+}
+
+
+.alignItems-center {
+    align-items: center;
+}
+
+.alignItems-baseline {
+    align-items: baseline;
 }
