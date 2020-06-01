@@ -2,20 +2,19 @@ const dirBtn = document.getElementById('dirToggle');
 const dirSpan = document.getElementById('dirSpan');
 const flexDirBtn = document.getElementById('flexDirection');
 const flexDirSpan = document.getElementById('flexDirSpan'); 
-const flexDirRevBtn = document.getElementById('flexDirectionReversed');
+const flexDirRevBtn = document.getElementById('flexDirRevButton');
 const flexWrapBtn = document.getElementById('flexWrapButton')
 const containerList = document.getElementsByClassName('container');
 const displayFlexList = document.getElementsByClassName('display-flex');
-const flexDirRevButton = document.getElementById('flexDirRevButton');
 let direction = 'row';
 let flexDirRevBtnChecked = false;
 let flexWrapBtnChecked = false;
 
 // directionality
 if (flexDirRevBtnChecked) {
-    flexDirRevButton.classList.add('checked');
+    flexDirRevBtn.classList.add('checked');
 } else {
-    flexDirRevButton.classList.remove('checked');
+    flexDirRevBtn.classList.remove('checked');
 }
 
 dirBtn.addEventListener('click', function () {
@@ -103,7 +102,7 @@ flexDirRevBtn.addEventListener('click', function() {
 
         }
 
-        flexDirRevButton.classList.toggle('checked');
+        flexDirRevBtn.classList.toggle('checked');
         flexDirRevBtnChecked = true; 
 
     } else {
@@ -125,7 +124,7 @@ flexDirRevBtn.addEventListener('click', function() {
             }
         }
 
-        flexDirRevButton.classList.toggle('checked');
+        flexDirRevBtn.classList.toggle('checked');
         flexDirRevBtnChecked = false;
 
     }

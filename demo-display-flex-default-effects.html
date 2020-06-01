@@ -30,6 +30,9 @@
   <nav class="toggles">
     <h3>Display Properties</h3>
     <button id="dirToggle">HTML directionality: <span id="dirSpan">ltr</span></button>
+    <button class="displayNone" id="flexDirection">CSS flex-direction: <span id="flexDirSpan">row</span></button>
+    <button class="displayNone" id="flexDirRevButton">row-reverse/column-reverse</button>
+    <button class="displayNone" id="flexWrapButton">flex-wrap</button>
   </nav>
 
 
@@ -131,23 +134,6 @@
 
 
 
-  <script type="text/javascript">
-    const dirBtn = document.getElementById('dirToggle');
-    const dirSpan = document.getElementById('dirSpan');
-    const containerList = document.getElementsByClassName('container');
-
-    dirBtn.addEventListener('click', function () {
-        for (let i = 0; i < containerList.length; i++) {
-            containerList[i].classList.toggle('ltrDir');
-            containerList[i].classList.toggle('rtlDir');
-        }
-
-        if (dirSpan.innerHTML == 'ltr') {
-            dirSpan.innerHTML = 'rtl';
-        } else {
-            dirSpan.innerHTML = 'ltr';
-        }
-    });
-  </script>
+  <script type="text/javascript" src="./js/scripts.js"></script>
 </body>
 </html>

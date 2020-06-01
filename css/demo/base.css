@@ -79,7 +79,7 @@ section:last-of-type {
     margin: 0 0 1.5em;
 }
 
-.toggles button, .toggles .button {
+button, .button {
     border: none;
     font-size: 1rem;
     padding: .75em 1em;
@@ -99,9 +99,6 @@ section:last-of-type {
     font-weight: 700;
 }
 
-.displayNone {
-    display: none;
-}
 
 .rtlDir {
     direction: rtl;
@@ -125,4 +122,8 @@ section:last-of-type {
 
 .flex-wrap {
     flex-wrap: wrap;
+}
+
+.displayNone {
+    display: none;
 }
