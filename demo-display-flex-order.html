@@ -12,9 +12,6 @@
       height: 50px;
       border: 2px dotted #f8de4c;
     }
-    .display-flex {
-      flex-flow: row wrap;
-    }
     .order-1 {
       order: -1 !important;
     }
@@ -45,15 +42,19 @@
 
   <nav class="toggles">
     <h3>Flex Item Properties</h3>
-    <p>These buttons will apply the order property to the #9 flex-item:</p>
+    <p>The order buttons will apply the order property to the #9 flex-item:</p>
     <p>Flex items have a default order value of 0, therefore items with an integer value greater than 0 will be displayed after any items that have not been given an <b>explicit order value</b>. Each of the items in this demo have been assigned an order value from 0 to 9 in order.</p>
     <p>You can also use negative values with order, which can be quite useful. If you want to make one item display first, and leave the order of all other items unchanged, you can give that item an order of -1. As this is lower than 0 the item will always be displayed first.</p>
+    <button id="dirToggle">HTML directionality: <span id="dirSpan">ltr</span></button>
+    <button id="flexDirection">CSS flex-direction: <span id="flexDirSpan">row</span></button>
+    <button id="flexDirRevButton">row-reverse/column-reverse</button>
+    <button id="flexWrapButton">flex-wrap</button>
     <button class="toggle" id="order-1Toggle">order: -1</button>
     <button class="toggle" id="order0Toggle">order: 0</button>
     <button class="toggle" id="order1Toggle">order: 1</button>
     <button class="toggle" id="order2Toggle">order: 2</button>
     <button class="toggle" id="order3Toggle">order: 3</button>
-    <button class="toggle" id="reset">Reset</button>
+    <button class="toggle" id="reset">Reset order</button>
   </nav>
 
 
@@ -130,9 +131,8 @@
     resetBtn.addEventListener('click', function() {
       unCheck();
     });
-
-
   </script>
+  <script type="text/javascript" src="./js/scripts.js"></script>
 
 </body>
 </html>
