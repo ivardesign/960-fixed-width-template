@@ -49,6 +49,10 @@ header span, header h2 {
     color: #f8de4c;
 }
 
+header a {
+    color: #fff;
+}
+
 section {
     max-width: 66em;
     background: #fff;
@@ -79,7 +83,7 @@ section:last-of-type {
     margin: 0 0 1.5em;
 }
 
-button, .button {
+button {
     border: none;
     font-size: 1rem;
     padding: .75em 1em;
@@ -126,4 +130,31 @@ button, .button {
 
 .displayNone {
     display: none;
+}
+
+
+
+/* justify-content */
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.center {
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
 }

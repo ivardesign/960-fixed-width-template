@@ -45,8 +45,8 @@
     <h3>Flex Item Properties</h3>
     <p>The order buttons will apply the order property to the #9 flex-item:</p>
 
-    <button id="dirToggle">HTML directionality: <span id="dirSpan">ltr</span></button>
-    <button id="flexDirection">CSS flex-direction: <span id="flexDirSpan">row</span></button>
+    <button id="dirToggle">directionality: <span id="dirSpan">ltr</span></button>
+    <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>
     <button id="flexDirRevButton">row-reverse/column-reverse</button>
     <button id="flexWrapButton">flex-wrap</button>
     <hr>
@@ -55,7 +55,7 @@
     <button class="toggle" id="order1Toggle">order: 1</button>
     <button class="toggle" id="order2Toggle">order: 2</button>
     <button class="toggle" id="order3Toggle">order: 3</button>
-    <button class="toggle" id="reset">Reset order</button>
+    <button id="resetOrder">Reset order</button>
   </nav>
 
 
@@ -85,7 +85,7 @@
     const order2Btn = document.getElementById('order2Toggle');
     const order3Btn = document.getElementById('order3Toggle');
     const moveThis = document.getElementById('moveThisOne');
-    const resetBtn = document.getElementById('reset');
+    const resetOrderBtn = document.getElementById('resetOrder');
 
     function unCheck() {
       let itemVal = -1;
@@ -129,7 +129,7 @@
       order3Btn.classList.add('checked');
     });
 
-    resetBtn.addEventListener('click', function() {
+    resetOrderBtn.addEventListener('click', function() {
       unCheck();
     });
   </script>
