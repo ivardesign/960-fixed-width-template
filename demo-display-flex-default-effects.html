@@ -106,9 +106,13 @@
 
   <section>
     <h2>DIV container with paragraphs (with border on each paragraph)</h2>
+    <p>The first paragraph is a &#60;bdo&#62;&#60;/bdo&#62;> element and the letters are placed in reverse order compared with English (ltr).</p>
     <div class="container">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus odio vitae urna luctus auctor. Nam sit amet eros quam. Vestibulum dictum est at iaculis aliquam.</p>
-      <p>Fusce tincidunt rhoncus ipsum, eu maximus turpis pulvinar et. Nullam pretium pharetra ante, in accumsan velit facilisis et.</p>
+      <p><bdo dir="rtl">The text in this paragraph is wrapped in &#60;bdo dir="rtl"&#62; tags within the
+          &#60;p&#62; tags, reversing the order of the letters without printing the letters themselves in a backward (mirror) fashion.</bdo></p>
+      <p>The text in the previous paragraph is wrapped in &#60;bdo dir="rtl"&#62; tags within the
+        &#60;p&#62; tags, reversing the order of the letters without printing the letters themselves in a backward
+        (mirror) fashion.</p>
       <p>Vivamus leo sapien, cursus id venenatis a, efficitur sed dui. Pellentesque rhoncus lectus a dui semper tincidunt. Suspendisse interdum finibus augue, vitae blandit mauris mollis nec. Curabitur id viverra risus.</p>
       <p>Donec vitae tempor nunc, sit amet maximus turpis. Cras varius vitae turpis quis blandit. Nunc congue condimentum ante, in congue justo faucibus sit amet.</p>
       <p>Pellentesque feugiat pulvinar turpis, non ultricies quam ultrices eu. Aliquam velit dolor, aliquam id nisl a, interdum volutpat erat.</p>
