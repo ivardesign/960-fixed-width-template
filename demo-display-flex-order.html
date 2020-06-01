@@ -37,14 +37,14 @@
   <header>
     <h1>CSS <span>Flex</span>ible <span>Box</span> Module</h1>
     <h2>Flex Items - 'order'</h2>
-    <p class="max-width-38em">Demonstration of "order".</p>      
+    <p class="max-width-38em">Flex items have a default order value of 0, therefore items with an integer value greater than 0 will be displayed after any items that have not been given an <b>explicit order value</b>. Each of the items in this demo have been assigned an order value from 0 to 9 in order.</p>
+    <p class="max-width-38em">You can also use negative values with order, which can be quite useful. If you want to make one item display first, and leave the order of all other items unchanged, you can give that item an order of -1. As this is lower than 0 the item will always be displayed first.</p>
   </header>
 
   <nav class="toggles">
     <h3>Flex Item Properties</h3>
     <p>The order buttons will apply the order property to the #9 flex-item:</p>
-    <p>Flex items have a default order value of 0, therefore items with an integer value greater than 0 will be displayed after any items that have not been given an <b>explicit order value</b>. Each of the items in this demo have been assigned an order value from 0 to 9 in order.</p>
-    <p>You can also use negative values with order, which can be quite useful. If you want to make one item display first, and leave the order of all other items unchanged, you can give that item an order of -1. As this is lower than 0 the item will always be displayed first.</p>
+
     <button id="dirToggle">HTML directionality: <span id="dirSpan">ltr</span></button>
     <button id="flexDirection">CSS flex-direction: <span id="flexDirSpan">row</span></button>
     <button id="flexDirRevButton">row-reverse/column-reverse</button>
