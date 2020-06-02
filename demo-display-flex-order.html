@@ -35,6 +35,17 @@
 
 
   <header>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <button id="mainNavButton" role="button"><span>&#9776;</span>&nbsp;Menu</button>
+      <ol id="mainNavItems" class="mainNavItems displayNone" role="list">
+        <li><a href="./demo-display-flex-default-effects.html">display: flex</a></li>
+        <li><a href="./demo-display-flex-flex-direction.html">dir, flex-direction</a></li>
+        <li><a href="./demo-display-flex-flex-direction-flex-wrap.html">flex-wrap</a></li>
+        <li><a href="./demo-display-flex-justify-content.html">justify-content</a></li>
+        <li><a class="active" href="./demo-display-flex-order.html">order</a></li>
+        <li><a href="./demo-display-flex-align-items.html">align-items</a></li>
+      </ol>
+    </nav>
     <h1>CSS <span>Flex</span>ible <span>Box</span> Module</h1>
     <h2>order</h2>
     <p class="max-width-38em">Flex items have a default order value of 0, therefore items with an integer value greater than 0 will be displayed after any items that have not been given an <b>explicit order value</b>. Each of the items in this demo have been assigned an order value from 0 to 9 in order.</p>
@@ -140,6 +151,15 @@
 
     resetOrderBtn.addEventListener('click', function() {
       unCheck();
+    });
+    
+    // mainNav
+    const mainNavbtn = document.getElementById('mainNavButton');
+
+    mainNavbtn.addEventListener('click', function() {
+      const hint = document.getElementById('mainNavItems');
+
+      hint.classList.toggle('displayNone');
     });
   </script>
   <script type="text/javascript" src="./js/scripts.js"></script>

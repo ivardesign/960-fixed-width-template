@@ -12,6 +12,17 @@
 
 
   <header>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <button id="mainNavButton" role="button"><span>&#9776;</span>&nbsp;Menu</button>
+      <ol id="mainNavItems" class="mainNavItems displayNone" role="list">
+        <li><a class="active" href="./demo-display-flex-default-effects.html">display: flex</a></li>
+        <li><a href="./demo-display-flex-flex-direction.html">dir, flex-direction</a></li>
+        <li><a href="./demo-display-flex-flex-direction-flex-wrap.html">flex-wrap</a></li>
+        <li><a href="./demo-display-flex-justify-content.html">justify-content</a></li>
+        <li><a href="./demo-display-flex-order.html">order</a></li>
+        <li><a href="./demo-display-flex-align-items.html">align-items</a></li>
+      </ol>
+    </nav>
     <h1>CSS <span>Flex</span>ible <span>Box</span> Module</h1>
     <h2>display: flex</h2>
     <p class="max-width-38em">Demonstration of "display: flex" with default settings (no other flexbox declarations) compared with non-flex containers and effects on various flex-items such as block and inline items in each.</p>      
@@ -24,7 +35,6 @@
       <li>inherited margins from the P elements are kept,</li>
       <li>flex-items can break out of their container when the container is too narrow.</li>
     </ul>
-
   </header>
 
   <div class="toggles">
@@ -134,6 +144,15 @@
 
 
 
+  <script>
+    const mainNavbtn = document.getElementById('mainNavButton');
+
+    mainNavbtn.addEventListener('click', function() {
+      const hint = document.getElementById('mainNavItems');
+
+      hint.classList.toggle('displayNone');
+    });
+  </script>
   <script type="text/javascript" src="./js/scripts.js"></script>
 </body>
 </html>
