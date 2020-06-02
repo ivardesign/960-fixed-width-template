@@ -52,6 +52,19 @@ header a {
     color: #fff;
 }
 
+details > summary {
+    padding: 0 0 .5em;
+    cursor: pointer;
+}
+
+details[open] {
+    padding-bottom: .7em;
+}
+
+details[open] > summary span {
+    color: #f8de4c;
+}
+
 section {
     max-width: 66em;
     background: #fff;

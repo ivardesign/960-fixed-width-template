@@ -36,24 +36,34 @@
 
   </header>
 
-  <nav class="toggles">
+  <div class="toggles">
     <h3>Display Properties</h3>
-    <button id="dirToggle">directionality: <span id="dirSpan">ltr</span></button>
-    <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>  
-    <button id="flexDirRevButton">row-reverse/column-reverse</button>
-    <button id="flexWrapButton">flex-wrap</button>
-    <hr>
-    <button class="toggle" id="flexStartButton">flex-start</button>
-    <button class="toggle" id="flexEndButton">flex-end</button>
-    <button class="toggle" id="centerButton">center</button>
-    <button class="toggle" id="spaceBetweenButton">space-between</button>
-    <button class="toggle" id="spaceAroundButton">space-around</button>
-    <button class="toggle" id="spaceEvenlyButton">space-evenly</button>
-    <button id="resetJustify">reset</button>
-    <!-- <hr>
-    <button id="safeButton">safe</button>
-    <button id="unsafeButton">unsafe</button> -->
-  </nav>
+    <details>
+      <summary>
+        <span>dir, flex-direction and flex-wrap</span>
+      </summary>
+      <button id="dirToggle">directionality: <span id="dirSpan">ltr</span></button>
+      <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>  
+      <button id="flexDirRevButton">row-reverse/column-reverse</button>
+      <button id="flexWrapButton">flex-wrap</button>
+    </details>
+
+    <details open>
+      <summary>
+        <span>justify-content</span>
+      </summary>
+      <button class="toggle" id="flexStartButton">flex-start</button>
+      <button class="toggle" id="flexEndButton">flex-end</button>
+      <button class="toggle" id="centerButton">center</button>
+      <button class="toggle" id="spaceBetweenButton">space-between</button>
+      <button class="toggle" id="spaceAroundButton">space-around</button>
+      <button class="toggle" id="spaceEvenlyButton">space-evenly</button>
+      <button id="resetJustify">reset</button>
+      <!-- <hr>
+      <button id="safeButton">safe</button>
+      <button id="unsafeButton">unsafe</button> -->
+    </details>
+  </div>
 
 
   <section>  

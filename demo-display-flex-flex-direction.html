@@ -24,13 +24,18 @@
 
   </header>
 
-  <nav class="toggles">
+  <div class="toggles">
     <h3>Display Properties</h3>
-    <button id="dirToggle">directionality: <span id="dirSpan">ltr</span></button>
-    <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>
-    <button id="flexDirRevButton">row-reverse/column-reverse</button>
-    <button class="displayNone" id="flexWrapButton">flex-wrap</button>
-  </nav>
+    <details open>
+      <summary>
+        <span>dir, flex-direction</span>
+      </summary>
+      <button id="dirToggle">directionality: <span id="dirSpan">ltr</span></button>
+      <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>
+      <button id="flexDirRevButton">row-reverse/column-reverse</button>
+      <button class="displayNone" id="flexWrapButton">flex-wrap</button>
+    </details>
+  </div>
 
 
   <section>

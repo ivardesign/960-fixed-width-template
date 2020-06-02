@@ -41,22 +41,31 @@
     <p class="max-width-38em">You can also use negative values with order, which can be quite useful. If you want to make one item display first, and leave the order of all other items unchanged, you can give that item an order of -1. As this is lower than 0 the item will always be displayed first.</p>
   </header>
 
-  <nav class="toggles">
+  <div class="toggles">
     <h3>Flex Item Properties</h3>
     <p>The order buttons will apply the order property to the #9 flex-item:</p>
+    <details>
+      <summary>
+        <span>dir, flex-direction and flex-wrap</span>
+      </summary>
+      <button id="dirToggle">directionality: <span id="dirSpan">ltr</span></button>
+      <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>
+      <button id="flexDirRevButton">row-reverse/column-reverse</button>
+      <button id="flexWrapButton">flex-wrap</button>
+    </details>
 
-    <button id="dirToggle">directionality: <span id="dirSpan">ltr</span></button>
-    <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>
-    <button id="flexDirRevButton">row-reverse/column-reverse</button>
-    <button id="flexWrapButton">flex-wrap</button>
-    <hr>
-    <button class="toggle" id="order-1Toggle">order: -1</button>
-    <button class="toggle" id="order0Toggle">order: 0</button>
-    <button class="toggle" id="order1Toggle">order: 1</button>
-    <button class="toggle" id="order2Toggle">order: 2</button>
-    <button class="toggle" id="order3Toggle">order: 3</button>
-    <button id="resetOrder">Reset order</button>
-  </nav>
+    <details open>
+      <summary>
+        <span>order</span>
+      </summary>
+      <button class="toggle" id="order-1Toggle">order: -1</button>
+      <button class="toggle" id="order0Toggle">order: 0</button>
+      <button class="toggle" id="order1Toggle">order: 1</button>
+      <button class="toggle" id="order2Toggle">order: 2</button>
+      <button class="toggle" id="order3Toggle">order: 3</button>
+      <button id="resetOrder">Reset order</button>
+    </details>
+  </div>
 
 
   <section>    

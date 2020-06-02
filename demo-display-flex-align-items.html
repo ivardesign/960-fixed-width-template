@@ -38,43 +38,55 @@
 
   </header>
 
-  <nav class="toggles">
+  <div class="toggles">
     <h3>Display Properties</h3>
-    <h4>dir, flex-direction and flex-wrap</h4>
-    <button id="dirToggle">directionality: <span id="dirSpan">ltr</span></button>
-    <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>  
-    <button id="flexDirRevButton">row-reverse/column-reverse</button>
-    <button id="flexWrapButton">flex-wrap</button>
-    <hr>
-    <h4>justify-content</h4>
-    <button class="toggle" id="flexStartButton">flex-start</button>
-    <button class="toggle" id="flexEndButton">flex-end</button>
-    <button class="toggle" id="centerButton">center</button>
-    <button class="toggle" id="spaceBetweenButton">space-between</button>
-    <button class="toggle" id="spaceAroundButton">space-around</button>
-    <button class="toggle" id="spaceEvenlyButton">space-evenly</button>
-    <button id="justifyContentResetButton">reset justify-content</button>
-    <!-- <hr>
-    <button id="safeButton">safe</button>
-    <button id="unsafeButton">unsafe</button> -->
-    <hr>
-    <h4>align-items</h4>
-    <button class="alignToggle" id="alignItemsStretchButton">stretch</button>
+    <details>
+      <summary>
+        <span>dir, flex-direction and flex-wrap</span>
+      </summary>
+        <button id="dirToggle">directionality: <span id="dirSpan">ltr</span></button>
+        <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>  
+        <button id="flexDirRevButton">row-reverse/column-reverse</button>
+        <button id="flexWrapButton">flex-wrap</button>        
+    </details>
 
-    <button class="alignToggle" id="alignItemsFlexStartButton">flex-start</button>
-    <button class="alignToggle" id="alignItemsSelfStartButton">self-start</button>
-    <button class="alignToggle" id="alignItemsStartButton">start</button>
+    <details>
+      <summary>
+        <span>justify-content</span>
+      </summary>
+      <button class="toggle" id="flexStartButton">flex-start</button>
+      <button class="toggle" id="flexEndButton">flex-end</button>
+      <button class="toggle" id="centerButton">center</button>
+      <button class="toggle" id="spaceBetweenButton">space-between</button>
+      <button class="toggle" id="spaceAroundButton">space-around</button>
+      <button class="toggle" id="spaceEvenlyButton">space-evenly</button>
+      <button id="justifyContentResetButton">reset justify-content</button>
+      <!-- <hr>
+      <button id="safeButton">safe</button>
+      <button id="unsafeButton">unsafe</button> -->
+    </details>
 
-    <button class="alignToggle" id="alignItemsFlexEndButton">flex-end</button>
-    <button class="alignToggle" id="alignItemsSelfEndButton">self-end</button>
-    <button class="alignToggle" id="alignItemsEndButton">end</button>
-
-    <button class="alignToggle" id="alignItemsCenterButton">center</button>
-
-    <button class="alignToggle" id="alignItemsBaselineButton">baseline</button>
-
-    <button id="alignItemsResetButton">reset align-items</button>
-  </nav>
+    <details open>
+      <summary>
+        <span>align-items</span>
+      </summary>
+      <button class="alignToggle" id="alignItemsStretchButton">stretch</button>
+  
+      <button class="alignToggle" id="alignItemsFlexStartButton">flex-start</button>
+      <button class="alignToggle" id="alignItemsSelfStartButton">self-start</button>
+      <button class="alignToggle" id="alignItemsStartButton">start</button>
+  
+      <button class="alignToggle" id="alignItemsFlexEndButton">flex-end</button>
+      <button class="alignToggle" id="alignItemsSelfEndButton">self-end</button>
+      <button class="alignToggle" id="alignItemsEndButton">end</button>
+  
+      <button class="alignToggle" id="alignItemsCenterButton">center</button>
+  
+      <button class="alignToggle" id="alignItemsBaselineButton">baseline</button>
+  
+      <button id="alignItemsResetButton">reset align-items</button>
+    </details>
+  </div>
 
 
   <section>  
