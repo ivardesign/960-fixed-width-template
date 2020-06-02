@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>'align-items'</title>
-  <meta name="description" content="Demonstration of align-items">
+  <title>'gap'</title>
+  <meta name="description" content="Demonstration of gap, applied to a flex container">
   <link rel="stylesheet" href="./css/demo/base.css">
 
   <style>
@@ -29,8 +29,8 @@
             <li><a href="./demo-display-flex-flex-direction-flex-wrap.html">flex-wrap</a></li>
             <li><a href="./demo-display-flex-justify-content.html">justify-content</a></li>
             <li><a href="./demo-display-flex-order.html">order</a></li>
-            <li><a class="active" href="./demo-display-flex-align-items.html">align-items</a></li>   
-            <li><a href="./demo-display-flex-gap.html">gap</a></li>         
+            <li><a href="./demo-display-flex-align-items.html">align-items</a></li>   
+            <li><a class="active" href="./demo-display-flex-gap.html">gap</a></li>   
           </ol>
         </li>
         <li>Item Properties
@@ -41,22 +41,8 @@
       </ul>
     </nav>   
     <h1>CSS <span>Flex</span>ible <span>Box</span> Module</h1>
-    <h2>align-items</h2>
-    <p>There are 9 possible values for align-items.</p>
-    <h5><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" rel="noopener noreferrer" target="_blank">Detailed descriptions of each can be found at CSS-Tricks</a></h5>
-    <ul class="max-width-38em">
-      <li>stretch <span>(default)</li>
-      <li>flex-start / self-start / start <span>- items are aligned to the start of the cross axis, each with some differences according to flex-direction/writing-mode.</span></li>
-      <li>flex-end / self-end / end <span>- items are aligned to the end of the cross axis, each with some differences according to flex-direction/writing-mode.</span></li>
-      <li>center <span>- items are aligned center to the cross-axis.</span></li>
-      <li>baseline <span>- items are aligned to item baselines.</span></li>
-    </ul>
-    <p>These can be paired with one of two additional keywords:</p>
-    <ul>
-      <li>safe</li>
-      <li>unsafe</li>
-    </ul>
-
+    <h2>gap</h2>
+    <p>When applied to a flex container, gap will put the space you specify between flex items.</p>
   </header>
 
   <div class="toggles">
@@ -87,7 +73,7 @@
       <button id="unsafeButton">unsafe</button> -->
     </details>
 
-    <details open>
+    <details>
       <summary>
         <span>align-items</span>
       </summary>
@@ -106,6 +92,17 @@
       <button class="alignToggle" id="alignItemsBaselineButton">baseline</button>
   
       <button id="alignItemsResetButton">reset align-items</button>
+    </details>
+
+    <details open>
+      <summary>
+        <span>gap</span>
+      </summary>
+      <button class="gapToggle" id="gap1emButton">gap: 1em</button>
+      <button class="gapToggle" id="gap4emButton">gap: 4em</button>
+      <button class="gapToggle" id="gap8emButton">gap: 8em</button>
+
+      <button id="gapResetButton">reset gap</button>
     </details>
   </div>
 
@@ -170,6 +167,7 @@
     // button toggle lists
     const buttonList = document.getElementsByClassName('toggle');
     const alignItemsButtonList = document.getElementsByClassName('alignToggle');
+    const gapToggleButtonList = document.getElementsByClassName('gapToggle');
 
 
     // buttons: justify-content
@@ -194,6 +192,12 @@
     const alignItemsBaselineBtn = document.getElementById('alignItemsBaselineButton');
     const alignItemsResetBtn = document.getElementById('alignItemsResetButton');
 
+    // buttons: gap
+    const gap1emBtn = document.getElementById('gap1emButton');
+    const gap4emBtn = document.getElementById('gap4emButton');
+    const gap8emBtn = document.getElementById('gap8emButton');
+    const gapResetBtn = document.getElementById('gapResetButton');
+
 
     // flex containers list
     let flexContainerList = document.getElementsByClassName('display-flex');
@@ -217,6 +221,17 @@
       }
       for (let j = 0; j < alignItemsButtonList.length; j++) {
         alignItemsButtonList[j].classList.remove('checked');
+      }
+    }
+
+
+    // reset function: gap
+    function uncheckGap() {
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.remove('gap1em', 'gap4em', 'gap8em');
+      }
+      for (let j = 0; j < gapToggleButtonList.length; j++) {
+        gapToggleButtonList[j].classList.remove('checked');
       }
     }
 
@@ -355,6 +370,39 @@
     alignItemsResetBtn.addEventListener('click', function () {
       uncheckAlignItems();
     });
+
+
+
+    // button events: gap
+    gap1emBtn.addEventListener('click', function() {
+      uncheckGap();
+      gap1emBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('gap1em');
+      }
+    });
+
+    gap4emBtn.addEventListener('click', function() {
+      uncheckGap();
+      gap4emBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('gap4em');
+      }
+    });
+
+    gap8emBtn.addEventListener('click', function() {
+      uncheckGap();
+      gap8emBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('gap8em');
+      }
+    });
+
+    gapResetBtn.addEventListener('click', function() {
+      uncheckGap();
+    })
+
+
 
   </script>
 

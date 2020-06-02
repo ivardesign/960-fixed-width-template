@@ -243,3 +243,15 @@ section:last-of-type {
 .alignItems-baseline {
     align-items: baseline;
 }
+
+
+/* flex gap */
+.gap1em {
+    gap: 1em;
+}
+.gap4em {
+    gap: 4em;
+}
+.gap8em {
+    gap: 8em;
+}
