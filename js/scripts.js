@@ -1,3 +1,14 @@
+// mainNav hamburger menu
+const mainNavbtn = document.getElementById('mainNavButton');
+
+mainNavbtn.addEventListener('click', function() {
+  const hint = document.getElementById('mainNavItems');
+
+  mainNavButton.classList.toggle('checked');
+  hint.classList.toggle('displayNone');
+});
+
+// demos
 const dirBtn = document.getElementById('dirToggle');
 const dirSpan = document.getElementById('dirSpan');
 const flexDirBtn = document.getElementById('flexDirection');
