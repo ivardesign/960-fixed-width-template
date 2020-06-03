@@ -245,6 +245,39 @@ section:last-of-type {
 }
 
 
+/* align-content */
+.alignContent-stretch {
+    align-content: stretch;
+}
+.alignContent-flex-start {
+    align-content: flex-start;
+}
+.alignContent-self-start {
+    align-content: self-start;
+}
+.alignContent-start {
+    align-content: start;
+}
+.alignContent-flex-end {
+    align-content: flex-end;
+}
+.alignContent-self-end {
+    align-content: self-end;
+}
+.alignContent-end {
+    align-content: end;
+}
+.alignContent-center {
+    align-content: center;
+}
+.alignContent-space-between {
+    align-content: space-between;
+}
+.alignContent-space-around {
+    align-content: space-around;
+}
+
+
 /* flex gap */
 .gap1em {
     gap: 1em;
