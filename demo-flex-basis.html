@@ -3,14 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>'gap'</title>
-  <meta name="description" content="Demonstration of gap, applied to a flex container">
+  <title>'flex-basis'</title>
+  <meta name="description" content="Demonstration of flex-basis, applied to a flex item">
   <link rel="stylesheet" href="./css/demo/base.css">
 
   <style>
     .container {
       height: 48vh;
       min-height: 500px;
+    }
+    .flexBasisContent {
+      flex-basis: content;
+    }
+    .flexBasisFitContent {
+      flex-basis: fit-content;
+    }
+    .flexBasis25Percent {
+      flex-basis: 25%;
+    }
+    .flexBasis4em {
+      flex-basis: 4em;
+    }
+    .flexBasis80px {
+      flex-basis: 80px;
     }
   </style>
   
@@ -29,20 +44,22 @@
             <li><a href="./demo-display-flex-justify-content.html">justify-content</a></li>
             <li><a href="./demo-display-flex-align-items.html">align-items</a></li>   
             <li><a href="./demo-display-flex-align-content.html">align-content</a></li>   
-            <li><a class="active" href="./demo-display-flex-gap.html">gap</a></li>   
+            <li><a href="./demo-display-flex-gap.html">gap</a></li>   
           </ol>
         </li>
         <li>Item Properties
           <ol>
             <li><a href="./demo-display-flex-order.html">order</a></li>
-            <li><a href="./demo-flex-basis.html">flex-basis</a></li>
+            <li><a class="active" href="./demo-flex-basis.html">order</a></li>
           </ol>
         </li>
       </ul>
     </nav>   
     <h1>CSS <span>Flex</span>ible <span>Box</span> Module</h1>
-    <h2>gap</h2>
-    <p>When applied to a flex container, gap will put the space you specify between flex items.</p>
+    <h2>flex-basis</h2>
+    <p>The flex-basis item property defines a default size for an element before the remaining space is distributed.  The size can be a keyword (e.g.: auto, content, fit-content, etc.) or a length (such as 50%, 40em, 100px).  Keyword support can be poor.</p>
+    <p>If flex-basis is set to zero, extra space around content isn't factored in.  If set to auto, extra space is distributed based on its flex-grow value.</p>
+    <img style="background: #efefef; border-radius: 5px; display: block; margin: auto; max-width: 100%; height: auto;" src="./img/demo/rel-vs-abs-flex.svg" width="504" height="240" alt="flex-basis space distribution">
   </header>
 
   <div class="toggles">
@@ -95,7 +112,7 @@
       <button id="alignItemsResetButton">reset align-items</button>
     </details>
 
-    <details open>
+    <details>
       <summary>
         <span>gap</span>
       </summary>
@@ -105,61 +122,53 @@
 
       <button id="gapResetButton">reset gap</button>
     </details>
+
+    <details open>
+      <summary>
+        <span>flex-basis</span>
+      </summary>
+      <button class="flexBasisToggle" id="flexBasisContentButton">content</button>
+      <button class="flexBasisToggle" id="flexBasisFitContentButton">fit-content</button>
+      <button class="flexBasisToggle" id="flexBasis25PercentButton">25%</button>
+      <button class="flexBasisToggle" id="flexBasis4emButton">4em</button>
+      <button class="flexBasisToggle" id="flexBasis80pxButton">80px</button>
+      <button id="flexBasisResetButton">reset flex-basis</button>
+    </details>
   </div>
 
 
   <section>  
     <h2>Flex container with image items</h2>
     <div class="container display-flex flexDirectionRow">
-      <img src="./img/demo/Screw_Head_-_Triple_Square.svg" width="50" height="50" alt="">
-      <img src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
-      <img src="./img/demo/square-outline.svg" width="50" height="50" alt="">
-      <img src="./img/demo/image.svg" width="50" height="50" alt="">
-      <img src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/Screw_Head_-_Triple_Square.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/square-outline.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/image.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
     </div>      
   </section>
-
-
 
 
   <section>    
     <h2>Flex container with DIV's</h2>
     <div class="container display-flex flexDirectionRow">
-      <div style="background-color: #1cb3ca;">1</div>
-      <div style="background-color: #6944f0;">2</div>
-      <div style="background-color: #1cb3ca;">3</div>
-      <div style="background-color: #6944f0;">4</div>
-      <div style="background-color: #1cb3ca;">5</div>
+      <div class="flex-item" style="background-color: #1cb3ca;">1</div>
+      <div class="flex-item" style="background-color: #6944f0;">2</div>
+      <div class="flex-item" style="background-color: #1cb3ca;">3</div>
+      <div class="flex-item" style="background-color: #6944f0;">4</div>
+      <div class="flex-item" style="background-color: #1cb3ca;">5</div>
     </div>      
   </section>
-
-
    
 
   <section>
-    <h2>Flex container (with spaces between numbers)</h2>
-    <div class="container display-flex flexDirectionRow">
-      0 1 2 3 4 5 6 7 8 9
-    </div>
-  
-    <h2>Flex container (no spaces)</h2>
-    <div class="container display-flex flexDirectionRow">
-      0123456789
-    </div>      
-  </section>
-  
-  
-  
-
-  <section>
     <h2>Flex container with paragraphs</h2>
-    <p class="max-width-38em">Note how the items in the following container will break out of the container on a small screen width.</p>
     <div class="container display-flex flexDirectionRow">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus odio vitae urna luctus auctor. Nam sit amet eros quam. Vestibulum dictum est at iaculis aliquam.</p>
-      <p>Fusce tincidunt rhoncus ipsum, eu maximus turpis pulvinar et. Nullam pretium pharetra ante, in accumsan velit facilisis et.</p>
-      <p>Vivamus leo sapien, cursus id venenatis a, efficitur sed dui. Pellentesque rhoncus lectus a dui semper tincidunt. Suspendisse interdum finibus augue, vitae blandit mauris mollis nec. Curabitur id viverra risus.</p>
-      <p>Donec vitae tempor nunc, sit amet maximus turpis. Cras varius vitae turpis quis blandit. Nunc congue condimentum ante, in congue justo faucibus sit amet.</p>
-      <p>Pellentesque feugiat pulvinar turpis, non ultricies quam ultrices eu. Aliquam velit dolor, aliquam id nisl a, interdum volutpat erat.</p>
+      <p class="flex-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus odio vitae urna luctus auctor. Nam sit amet eros quam. Vestibulum dictum est at iaculis aliquam.</p>
+      <p class="flex-item">Fusce tincidunt rhoncus ipsum, eu maximus turpis pulvinar et. Nullam pretium pharetra ante, in accumsan velit facilisis et.</p>
+      <p class="flex-item">Vivamus leo sapien, cursus id venenatis a, efficitur sed dui. Pellentesque rhoncus lectus a dui semper tincidunt. Suspendisse interdum finibus augue, vitae blandit mauris mollis nec. Curabitur id viverra risus.</p>
+      <p class="flex-item">Donec vitae tempor nunc, sit amet maximus turpis. Cras varius vitae turpis quis blandit. Nunc congue condimentum ante, in congue justo faucibus sit amet.</p>
+      <p class="flex-item">Pellentesque feugiat pulvinar turpis, non ultricies quam ultrices eu. Aliquam velit dolor, aliquam id nisl a, interdum volutpat erat.</p>
     </div>      
   </section>
 
@@ -169,7 +178,11 @@
     const buttonList = document.getElementsByClassName('toggle');
     const alignItemsButtonList = document.getElementsByClassName('alignToggle');
     const gapToggleButtonList = document.getElementsByClassName('gapToggle');
-
+    const flexBasisButtonList = document.getElementsByClassName('flexBasisToggle');
+    // flex containers list
+    let flexContainerList = document.getElementsByClassName('display-flex');
+    // flex items list
+    let flexItemsList = document.getElementsByClassName('flex-item');
 
     // buttons: justify-content
     const flexStartBtn = document.getElementById('flexStartButton');
@@ -179,7 +192,6 @@
     const spaceAroundBtn = document.getElementById('spaceAroundButton');
     const spaceEvenlyBtn = document.getElementById('spaceEvenlyButton');
     const justifyContentResetBtn = document.getElementById('justifyContentResetButton');
-
 
     // buttons: align-items
     const alignItemsStretchBtn = document.getElementById('alignItemsStretchButton');
@@ -199,9 +211,13 @@
     const gap8emBtn = document.getElementById('gap8emButton');
     const gapResetBtn = document.getElementById('gapResetButton');
 
-
-    // flex containers list
-    let flexContainerList = document.getElementsByClassName('display-flex');
+    // buttons: flex-basis
+    const flexBasisContentBtn = document.getElementById('flexBasisContentButton');
+    const flexBasisFitContentBtn = document.getElementById('flexBasisFitContentButton');
+    const flexBasis25PercentBtn = document.getElementById('flexBasis25PercentButton');
+    const flexBasis4emBtn = document.getElementById('flexBasis4emButton');
+    const flexBasis80pxBtn = document.getElementById('flexBasis80pxButton');
+    const flexBasisResetBtn = document.getElementById('flexBasisResetButton');
 
 
     // reset function: justify-content
@@ -214,7 +230,6 @@
       }
     }
 
-
     // reset function: align-items
     function uncheckAlignItems() {
       for (let i = 0; i < flexContainerList.length; i++) {
@@ -225,7 +240,6 @@
       }
     }
 
-
     // reset function: gap
     function uncheckGap() {
       for (let i = 0; i < flexContainerList.length; i++) {
@@ -233,6 +247,16 @@
       }
       for (let j = 0; j < gapToggleButtonList.length; j++) {
         gapToggleButtonList[j].classList.remove('checked');
+      }
+    }
+
+    // reset function: flex-basis
+    function uncheckFlexBasis() {
+      for (let i = 0; i < flexItemsList.length; i++) {
+        flexItemsList[i].classList.remove('flexBasisContent', 'flexBasisFitContent', 'flexBasis25Percent', 'flexBasis4em', 'flexBasis80px');
+      }
+      for (let j = 0; j < flexBasisButtonList.length; j++) {
+        flexBasisButtonList[j].classList.remove('checked');
       }
     }
 
@@ -401,7 +425,58 @@
 
     gapResetBtn.addEventListener('click', function() {
       uncheckGap();
-    })
+    });
+
+
+
+    // button events: flex-basis
+    flexBasisContentBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+      flexBasisContentBtn.classList.add('checked');
+      for (let i = 0; flexItemsList.length; i++) {
+        flexItemsList[i].classList.add('flexBasisContent');
+      }
+    });
+
+    flexBasisFitContentBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+      flexBasisFitContentBtn.classList.add('checked');
+      for (let i = 0; flexItemsList.length; i++) {
+        flexItemsList[i].classList.add('flexBasisFitContent');
+      }
+    });
+
+
+    flexBasis25PercentBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+      flexBasis25PercentBtn.classList.add('checked');
+      for (let i = 0; flexItemsList.length; i++) {
+        flexItemsList[i].classList.add('flexBasis25Percent');
+      }
+    });
+
+
+    flexBasis4emBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+      flexBasis4emBtn.classList.add('checked');
+      for (let i = 0; flexItemsList.length; i++) {
+        flexItemsList[i].classList.add('flexBasis4em');
+      }
+    });
+
+
+    flexBasis80pxBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+      flexBasis80pxBtn.classList.add('checked');
+      for (let i = 0; flexItemsList.length; i++) {
+        flexItemsList[i].classList.add('flexBasis80px');
+      }
+    });
+
+
+    flexBasisResetBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+    });
 
 
 

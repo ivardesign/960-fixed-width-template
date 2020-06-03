@@ -63,6 +63,25 @@ button span {
     font-weight: 700;
 }
 
+/* up-arrow button */
+.float-right {
+    float: right;
+}
+.up-arrow {
+    display: block flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3em;
+    font-size: 1rem;
+    font-family: 'Lucida Console';
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 50%;
+    background: #6944f0;
+}
+
 header p {
     font-size: 1.5rem;
 }
