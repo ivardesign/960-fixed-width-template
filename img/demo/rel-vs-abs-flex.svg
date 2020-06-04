@@ -4,12 +4,12 @@
 		tspan.css { font-family: monospace; }
 		.bracket &gt; path { stroke-width: 2; fill: transparent; }
 		.bracket &gt; text { font-weight: bold; }
-		.red &gt; path { stroke: hsl(0,80%,40%); }
-		.red &gt; text { fill:   hsl(0,80%,40%); }
-		.green &gt; path { stroke: hsl(120,80%,30%); }
-		.green &gt; text { fill:   hsl(120,80%,30%); }
-		.blue &gt; path { stroke: hsl(240,80%,50%); }
-		.blue &gt; text { fill:   hsl(240,80%,50%); }
+		.red &gt; path { stroke: #f82323; }
+		.red &gt; text { fill:   #f82323; }
+		.green &gt; path { stroke: #1cb3ca; }
+		.green &gt; text { fill:   #1cb3ca; }
+		.blue &gt; path { stroke: #6944f0; }
+		.blue &gt; text { fill:   #6944f0; }
 
 		.flexbox &gt; rect { fill: #ddd; }
 		.flexbox &gt; rect:first-of-type { fill: #888; }
