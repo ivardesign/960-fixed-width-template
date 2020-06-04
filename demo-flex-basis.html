@@ -180,9 +180,9 @@
     const gapToggleButtonList = document.getElementsByClassName('gapToggle');
     const flexBasisButtonList = document.getElementsByClassName('flexBasisToggle');
     // flex containers list
-    let flexContainerList = document.getElementsByClassName('display-flex');
+    const flexContainerList = document.getElementsByClassName('display-flex');
     // flex items list
-    let flexItemsList = document.getElementsByClassName('flex-item');
+    const flexItemsList = document.getElementsByClassName('flex-item');
 
     // buttons: justify-content
     const flexStartBtn = document.getElementById('flexStartButton');
@@ -433,16 +433,16 @@
     flexBasisContentBtn.addEventListener('click', function() {
       uncheckFlexBasis();
       flexBasisContentBtn.classList.add('checked');
-      for (let i = 0; flexItemsList.length; i++) {
-        flexItemsList[i].classList.add('flexBasisContent');
+      for (const item of flexItemsList) {
+        item.classList.add('flexBasisContent');
       }
     });
 
     flexBasisFitContentBtn.addEventListener('click', function() {
       uncheckFlexBasis();
       flexBasisFitContentBtn.classList.add('checked');
-      for (let i = 0; flexItemsList.length; i++) {
-        flexItemsList[i].classList.add('flexBasisFitContent');
+      for (const item of flexItemsList) {
+        item.classList.add('flexBasisFitContent');
       }
     });
 
@@ -450,8 +450,8 @@
     flexBasis25PercentBtn.addEventListener('click', function() {
       uncheckFlexBasis();
       flexBasis25PercentBtn.classList.add('checked');
-      for (let i = 0; flexItemsList.length; i++) {
-        flexItemsList[i].classList.add('flexBasis25Percent');
+      for (const item of flexItemsList) {
+        item.classList.add('flexBasis25Percent');
       }
     });
 
@@ -459,8 +459,8 @@
     flexBasis4emBtn.addEventListener('click', function() {
       uncheckFlexBasis();
       flexBasis4emBtn.classList.add('checked');
-      for (let i = 0; flexItemsList.length; i++) {
-        flexItemsList[i].classList.add('flexBasis4em');
+      for (const item of flexItemsList) {
+        item.classList.add('flexBasis4em');
       }
     });
 
@@ -468,8 +468,8 @@
     flexBasis80pxBtn.addEventListener('click', function() {
       uncheckFlexBasis();
       flexBasis80pxBtn.classList.add('checked');
-      for (let i = 0; flexItemsList.length; i++) {
-        flexItemsList[i].classList.add('flexBasis80px');
+      for (const item of flexItemsList) {
+        item.classList.add('flexBasis80px');
       }
     });
 
