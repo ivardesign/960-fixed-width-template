@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>'flex-grow'</title>
+  <meta name="description" content="Demonstration of flex-grow, applied to a flex item">
+  <link rel="stylesheet" href="./css/demo/base.css">
+  <style>
+    .flex-item {
+      flex-grow: 1;
+    }
+    .flexGrow1 {
+      flex-grow: 1;
+    }
+    .flexGrow2 {
+      flex-grow: 2;
+    }
+    .flexGrow3 {
+      flex-grow: 3;
+    }
+  </style>
+</head>
+<body>
+  <a name="top"></a>
+  <header>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <button id="mainNavButton" role="button"><span>&#9776;</span>&nbsp;Menu</button>
+      <ul id="mainNavItems" class="mainNavItems displayNone" role="list">
+        <li>Container Properties
+          <ol>
+            <li><a href="./demo-display-flex-default-effects.html">display: flex</a></li>
+            <li><a href="./demo-display-flex-flex-direction.html">flex-direction</a></li>
+            <li><a href="./demo-display-flex-flex-direction-flex-wrap.html">flex-wrap</a></li>
+            <li><a href="./demo-display-flex-justify-content.html">justify-content</a></li>
+            <li><a href="./demo-display-flex-align-items.html">align-items</a></li>   
+            <li><a href="./demo-display-flex-align-content.html">align-content</a></li>   
+            <li><a href="./demo-display-flex-gap.html">gap</a></li>   
+          </ol>
+        </li>
+        <li>Item Properties
+          <ol>
+            <li><a href="./demo-display-flex-order.html">order</a></li>
+            <li><a href="./demo-flex-basis.html">flex-basis</a></li>
+            <li><a class="active" href="./demo-flex-grow.html">flex-grow</a></li>
+          </ol>
+        </li>
+      </ul>
+    </nav>   
+    <h1>CSS <span>Flex</span>ible <span>Box</span> Module</h1>
+    <h2>flex-grow</h2>
+    <p>MDN: "The flex-grow CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).</p>
+    <p>The main size is either width or height of the item which is dependent on the flex-direction value.</p>
+    <p>The remaining space is the size of the flex container minus the size of all flex items' sizes together. If all sibling items have the same flex grow factor, then all items will receive the same share of remaining space, otherwise it is distributed according to the ratio defined by the different flex grow factors.</p>
+    <p>flex-grow is used alongside the other flex properties flex-shrink and flex-basis, and normally defined using the flex shorthand to ensure all values are set."</p>
+    <p>Use the buttons below to change the flex-grow number for the first child of each flex container. For demonstration purposes each flex-item has been set to flex-grow: 1 as its default.</p>
+  </header>
+
+  <div class="toggles">
+    <a href="#top" class="up-arrow float-right">&#x21E7;</a>
+    <h3>Display Properties</h3>
+    <div class="displayNone">
+    <details>
+      <summary>
+        <span>HTML directionality, flex-direction and flex-wrap</span>
+      </summary>
+        <button id="dirToggle">HTML directionality: <span id="dirSpan">ltr</span></button>
+        <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>  
+        <button id="flexDirRevButton">row-reverse/column-reverse</button>
+        <button id="flexWrapButton">flex-wrap</button>        
+    </details>
+
+    <details>
+      <summary>
+        <span>justify-content</span>
+      </summary>
+      <button class="toggle" id="flexStartButton">flex-start</button>
+      <button class="toggle" id="flexEndButton">flex-end</button>
+      <button class="toggle" id="centerButton">center</button>
+      <button class="toggle" id="spaceBetweenButton">space-between</button>
+      <button class="toggle" id="spaceAroundButton">space-around</button>
+      <button class="toggle" id="spaceEvenlyButton">space-evenly</button>
+      <button id="justifyContentResetButton">reset justify-content</button>
+      <!-- <hr>
+      <button id="safeButton">safe</button>
+      <button id="unsafeButton">unsafe</button> -->
+    </details>
+
+    <details>
+      <summary>
+        <span>align-items</span>
+      </summary>
+      <button class="alignToggle" id="alignItemsStretchButton">stretch</button>
+  
+      <button class="alignToggle" id="alignItemsFlexStartButton">flex-start</button>
+      <button class="alignToggle" id="alignItemsSelfStartButton">self-start</button>
+      <button class="alignToggle" id="alignItemsStartButton">start</button>
+  
+      <button class="alignToggle" id="alignItemsFlexEndButton">flex-end</button>
+      <button class="alignToggle" id="alignItemsSelfEndButton">self-end</button>
+      <button class="alignToggle" id="alignItemsEndButton">end</button>
+  
+      <button class="alignToggle" id="alignItemsCenterButton">center</button>
+  
+      <button class="alignToggle" id="alignItemsBaselineButton">baseline</button>
+  
+      <button id="alignItemsResetButton">reset align-items</button>
+    </details>
+
+    <details>
+      <summary>
+        <span>gap</span>
+      </summary>
+      <button class="gapToggle" id="gap1emButton">gap: 1em</button>
+      <button class="gapToggle" id="gap4emButton">gap: 4em</button>
+      <button class="gapToggle" id="gap8emButton">gap: 8em</button>
+
+      <button id="gapResetButton">reset gap</button>
+    </details>
+
+    <details open>
+      <summary>
+        <span>flex-basis</span>
+      </summary>
+      <button class="flexBasisToggle" id="flexBasisContentButton">content</button>
+      <button class="flexBasisToggle" id="flexBasisFitContentButton">fit-content</button>
+      <button class="flexBasisToggle" id="flexBasis25PercentButton">25%</button>
+      <button class="flexBasisToggle" id="flexBasis4emButton">4em</button>
+      <button class="flexBasisToggle" id="flexBasis80pxButton">80px</button>
+      <button id="flexBasisResetButton">reset flex-basis</button>
+    </details>
+    </div>
+
+    <details open>
+      <summary>
+        <span>flex-grow</span>
+      </summary>
+      <button class="flexGrowToggle" id="flexGrow1Button">flex-grow: 1</button>
+      <button class="flexGrowToggle" id="flexGrow2Button">flex-grow: 2</button>
+      <button class="flexGrowToggle" id="flexGrow3Button">flex-grow: 3</button>
+      <button id="flexGrowResetButton">reset flex-grow</button>
+    </details>
+  </div>
+
+  <section>  
+    <h2>Flex container with image items</h2>
+    <div class="container display-flex flexDirectionRow">
+      <img class="flex-item firstChild" src="./img/demo/Screw_Head_-_Triple_Square.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/square-outline.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/image.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
+    </div>      
+  </section>
+
+
+  <section>    
+    <h2>Flex container with DIV's</h2>
+    <div class="container display-flex flexDirectionRow">
+      <div class="flex-item firstChild" style="background-color: #1cb3ca;">1</div>
+      <div class="flex-item" style="background-color: #6944f0;">2</div>
+      <div class="flex-item" style="background-color: #1cb3ca;">3</div>
+      <div class="flex-item" style="background-color: #6944f0;">4</div>
+      <div class="flex-item" style="background-color: #1cb3ca;">5</div>
+    </div>      
+  </section>
+   
+
+  <section>
+    <h2>Flex container with paragraphs</h2>
+    <div class="container display-flex flexDirectionRow">
+      <p class="flex-item firstChild">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus odio vitae urna luctus auctor. Nam sit amet eros quam. Vestibulum dictum est at iaculis aliquam.</p>
+      <p class="flex-item">Fusce tincidunt rhoncus ipsum, eu maximus turpis pulvinar et. Nullam pretium pharetra ante, in accumsan velit facilisis et.</p>
+      <p class="flex-item">Vivamus leo sapien, cursus id venenatis a, efficitur sed dui. Pellentesque rhoncus lectus a dui semper tincidunt. Suspendisse interdum finibus augue, vitae blandit mauris mollis nec. Curabitur id viverra risus.</p>
+      <p class="flex-item">Donec vitae tempor nunc, sit amet maximus turpis. Cras varius vitae turpis quis blandit. Nunc congue condimentum ante, in congue justo faucibus sit amet.</p>
+      <p class="flex-item">Pellentesque feugiat pulvinar turpis, non ultricies quam ultrices eu. Aliquam velit dolor, aliquam id nisl a, interdum volutpat erat.</p>
+    </div>      
+  </section>
+
+
+  <script>
+    // button toggle lists
+    const flexGrowButtonList = document.getElementsByClassName('flexGrowToggle');
+    // flex containers list
+    const flexContainerList = document.getElementsByClassName('display-flex');
+    // flex items lists
+    const flexItemsList = document.getElementsByClassName('flex-item');
+    const flexItemsFirstChildList = document.getElementsByClassName('firstChild');
+    // buttons: flex-grow
+    const flexGrow1Btn = document.getElementById('flexGrow1Button');
+    const flexGrow2Btn = document.getElementById('flexGrow2Button');
+    const flexGrow3Btn = document.getElementById('flexGrow3Button');
+    const flexGrowResetBtn = document.getElementById('flexGrowResetButton');
+    // reset function: flex-grow
+    function uncheckflexGrow() {
+      for (let i = 0; i < flexItemsFirstChildList.length; i++) {
+        flexItemsFirstChildList[i].classList.remove('flexGrow1', 'flexGrow2', 'flexGrow3');
+      }
+      for (let j = 0; j < flexGrowButtonList.length; j++) {
+        flexGrowButtonList[j].classList.remove('checked');
+      }
+    }
+    // button events: flex-grow
+    flexGrow1Btn.addEventListener('click', function() {
+      uncheckflexGrow();
+      flexGrow1Btn.classList.add('checked');
+
+      for (const item of flexItemsFirstChildList) {
+        item.classList.add('flexGrow1');
+      }
+    });
+
+    flexGrow2Btn.addEventListener('click', function() {
+      uncheckflexGrow();
+      flexGrow2Btn.classList.add('checked');
+      for (const item of flexItemsFirstChildList) {
+        item.classList.add('flexGrow2');
+      }
+    });
+
+    flexGrow3Btn.addEventListener('click', function() {
+      uncheckflexGrow();
+      flexGrow3Btn.classList.add('checked');
+      for (const item of flexItemsFirstChildList) {
+        item.classList.add('flexGrow3');
+      }
+    });
+
+    flexGrowResetBtn.addEventListener('click', function() {
+      uncheckflexGrow();
+    });
+  </script>
+  <script src="./js/scripts.js" type="text/javascript"></script>
+</body>
+</html>
