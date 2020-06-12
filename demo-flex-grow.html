@@ -287,6 +287,9 @@
         flexGrowButtonList[j].classList.remove('checked');
       }
     }
+
+
+
     // button events: justify-content
     flexStartBtn.addEventListener('click', function () {
       unCheck();
@@ -312,7 +315,6 @@
       }
     });
 
-
     spaceBetweenBtn.addEventListener('click', function () {
       unCheck();
       spaceBetweenBtn.classList.add('checked');
@@ -320,7 +322,6 @@
         flexContainerList[i].classList.add('space-between');
       }
     });
-
 
     spaceAroundBtn.addEventListener('click', function () {
       unCheck();
@@ -341,7 +342,9 @@
     justifyContentResetBtn.addEventListener('click', function () {
       unCheck();
     });
-    
+
+
+
     // button events: align-items
     alignItemsStretchBtn.addEventListener('click', function () {
       uncheckAlignItems();
