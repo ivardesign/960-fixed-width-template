@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>'align-self'</title>
+  <meta name="description" content="Demonstration of align-self, applied to a flex item">
+  <link rel="stylesheet" href="./css/demo/base.css">
+  <style>
+    .container {
+      min-height: 500px;
+    }
+    .flexBasisContent {
+      flex-basis: content;
+    }
+    .flexBasisFitContent {
+      flex-basis: fit-content;
+    }
+    .flexBasis25Percent {
+      flex-basis: 25%;
+    }
+    .flexBasis4em {
+      flex-basis: 4em;
+    }
+    .flexBasis80px {
+      flex-basis: 80px;
+    }
+    .flexGrow1 {
+      flex-grow: 1;
+    }
+    .flexGrow2 {
+      flex-grow: 2;
+    }
+    .flexGrow3 {
+      flex-grow: 3;
+    }
+    .flexShrink1 {
+      flex-shrink: 1;
+    }
+    .flexShrink2 {
+      flex-shrink: 2;
+    }
+    .flexShrink3 {
+      flex-shrink: 3;
+    }
+    .alignSelfStretch {
+      align-self: stretch;
+    }
+    .alignSelfStart {
+      align-self: start;
+    }
+    .alignSelfEnd {
+      align-self: end;
+    }
+    .alignSelfCenter {
+      align-self: center;
+    }
+  </style>
+</head>
+<body>
+  <a name="top"></a>
+  <header>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <button id="mainNavButton" role="button"><span>&#9776;</span>&nbsp;Menu</button>
+      <ul id="mainNavItems" class="mainNavItems displayNone" role="list">
+        <li>Container Properties
+          <ol>
+            <li><a href="./demo-display-flex-default-effects.html">display: flex</a></li>
+            <li><a href="./demo-display-flex-flex-direction.html">flex-direction</a></li>
+            <li><a href="./demo-display-flex-flex-direction-flex-wrap.html">flex-wrap</a></li>
+            <li><a href="./demo-display-flex-justify-content.html">justify-content</a></li>
+            <li><a href="./demo-display-flex-align-items.html">align-items</a></li>   
+            <li><a href="./demo-display-flex-align-content.html">align-content</a></li>   
+            <li><a href="./demo-display-flex-gap.html">gap</a></li>   
+          </ol>
+        </li>
+        <li>Item Properties
+          <ol>
+            <li><a href="./demo-display-flex-order.html">order</a></li>
+            <li><a href="./demo-flex-basis.html">flex-basis</a></li>
+            <li><a href="./demo-flex-grow.html">flex-grow</a></li>
+            <li><a href="./demo-flex-shrink.html">flex-shrink</a></li>
+            <li><a class="active" href="./demo-align-self.html">align-self</a></li>
+          </ol>
+        </li>
+      </ul>
+    </nav>   
+    <h1>CSS <span>Flex</span>ible <span>Box</span> Module</h1>
+    <h2>align-self</h2>
+    <p class="max-width-38em">"align-self" controls alignment of an individual flex item on the cross axis.</p>
+    <p class="max-width-38em">The property doesn't apply to block-level boxes, or to table cells. If a flexbox item's cross-axis margin is auto, then align-self is ignored.</p>
+    <p class="max-width-38em">MDN lists the following possible values for align-self:</p>
+    <pre>
+      <code>
+        /* Keyword values */ 
+        align-self: auto; 
+        align-self: normal; 
+        
+        /* Positional alignment */ 
+        /* align-self does not take left and right values */
+        align-self: center; /* Put the item around the center */ 
+        align-self: start; /* Put the item at the start */ 
+        align-self: end; /* Put the item at the end */ 
+        align-self: self-start; /* Align the item flush at the start */ 
+        align-self: self-end; /* Align the item flush at the end */ 
+        align-self: flex-start; /* Put the flex item at the start */ 
+        align-self: flex-end; /* Put the flex item at the end */ 
+        
+        /* Baseline alignment */ 
+        align-self: baseline; 
+        align-self: first baseline; 
+        align-self: last baseline; 
+        align-self: stretch; /* Stretch 'auto'-sized items to fit the container */ 
+        
+        /* Overflow alignment */ 
+        align-self: safe center; 
+        align-self: unsafe center; 
+        
+        /* Global values */ 
+        align-self: inherit; 
+        align-self: initial; 
+        align-self: unset;
+      </code>
+    </pre>
+  </header>
+
+  <div class="toggles">
+    <a href="#top" class="up-arrow float-right">&#x21E7;</a>
+    <h3>Display Properties</h3>
+    <details>
+      <summary>
+        <span>HTML directionality, flex-direction and flex-wrap</span>
+      </summary>
+      <button id="dirToggle">HTML directionality: <span id="dirSpan">ltr</span></button>
+      <button id="flexDirection">flex-direction: <span id="flexDirSpan">row</span></button>  
+      <button id="flexDirRevButton">row-reverse/column-reverse</button>
+      <button id="flexWrapButton">flex-wrap</button>        
+    </details>
+
+    <details>
+      <summary>
+        <span>justify-content</span>
+      </summary>
+      <button class="toggle" id="flexStartButton">flex-start</button>
+      <button class="toggle" id="flexEndButton">flex-end</button>
+      <button class="toggle" id="centerButton">center</button>
+      <button class="toggle" id="spaceBetweenButton">space-between</button>
+      <button class="toggle" id="spaceAroundButton">space-around</button>
+      <button class="toggle" id="spaceEvenlyButton">space-evenly</button>
+      <button id="justifyContentResetButton">reset justify-content</button>
+    </details>
+
+    <details>
+      <summary>
+        <span>align-items</span>
+      </summary>
+      <button class="alignToggle" id="alignItemsStretchButton">stretch</button>
+      <button class="alignToggle" id="alignItemsFlexStartButton">flex-start</button>
+      <button class="alignToggle" id="alignItemsSelfStartButton">self-start</button>
+      <button class="alignToggle" id="alignItemsStartButton">start</button>
+      <button class="alignToggle" id="alignItemsFlexEndButton">flex-end</button>
+      <button class="alignToggle" id="alignItemsSelfEndButton">self-end</button>
+      <button class="alignToggle" id="alignItemsEndButton">end</button>
+      <button class="alignToggle" id="alignItemsCenterButton">center</button>
+      <button class="alignToggle" id="alignItemsBaselineButton">baseline</button>
+      <button id="alignItemsResetButton">reset align-items</button>
+    </details>
+
+    <details>
+      <summary>
+        <span>gap</span>
+      </summary>
+      <button class="gapToggle" id="gap1emButton">gap: 1em</button>
+      <button class="gapToggle" id="gap4emButton">gap: 4em</button>
+      <button class="gapToggle" id="gap8emButton">gap: 8em</button>
+      <button id="gapResetButton">reset gap</button>
+    </details>
+
+    <details class="displayNone">
+      <summary>
+        <span>flex-basis</span>
+      </summary>
+      <button class="flexBasisToggle" id="flexBasisContentButton">content</button>
+      <button class="flexBasisToggle" id="flexBasisFitContentButton">fit-content</button>
+      <button class="flexBasisToggle" id="flexBasis25PercentButton">25%</button>
+      <button class="flexBasisToggle" id="flexBasis4emButton">4em</button>
+      <button class="flexBasisToggle" id="flexBasis80pxButton">80px</button>
+      <button id="flexBasisResetButton">reset flex-basis</button>
+    </details>
+
+    <details class="displayNone">
+      <summary>
+        <span>flex-grow</span>
+      </summary>
+      <button class="flexGrowToggle" id="flexGrow1Button">flex-grow: 1</button>
+      <button class="flexGrowToggle" id="flexGrow2Button">flex-grow: 2</button>
+      <button class="flexGrowToggle" id="flexGrow3Button">flex-grow: 3</button>
+      <button id="flexGrowResetButton">reset flex-grow</button>
+    </details>
+
+    <details class="displayNone">
+      <summary>
+        <span>flex-shrink</span>
+      </summary>
+      <button class="flexShrinkToggle" id="flexShrink1Button">flex-shrink: 1</button>
+      <button class="flexShrinkToggle" id="flexShrink2Button">flex-shrink: 2</button>
+      <button class="flexShrinkToggle" id="flexShrink3Button">flex-shrink: 3</button>
+      <button id="flexShrinkResetButton">reset flex-shrink</button>
+    </details>
+
+    <details open>
+      <summary>
+        <span>align-self</span>
+      </summary>
+      <button class="alignSelfToggle" id="alignSelfStretchButton">stretch</button>
+      <button class="alignSelfToggle" id="alignSelfStartButton">start</button>
+      <button class="alignSelfToggle" id="alignSelfEndButton">end</button>
+      <button class="alignSelfToggle" id="alignSelfCenterButton">center</button>
+      <button id="alignSelfResetButton">reset align-self</button>
+    </details>
+
+  </div>
+
+  <section>  
+    <h2>Flex container with image items</h2>
+    <div class="container display-flex flexDirectionRow">
+      <img class="flex-item firstChild" src="./img/demo/Screw_Head_-_Triple_Square.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/square-outline.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/image.svg" width="50" height="50" alt="">
+      <img class="flex-item" src="./img/demo/Square-symbol.svg" width="50" height="50" alt="">
+    </div>      
+  </section>
+
+  <section>    
+    <h2>Flex container with DIV's</h2>
+    <div class="container display-flex flexDirectionRow">
+      <div class="flex-item firstChild" style="background-color: #1cb3ca;">1</div>
+      <div class="flex-item" style="background-color: #6944f0;">2</div>
+      <div class="flex-item" style="background-color: #1cb3ca;">3</div>
+      <div class="flex-item" style="background-color: #6944f0;">4</div>
+      <div class="flex-item" style="background-color: #1cb3ca;">5</div>
+    </div>      
+  </section>
+   
+  <section>
+    <h2>Flex container with paragraphs</h2>
+    <div class="container display-flex flexDirectionRow">
+      <p class="flex-item firstChild">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus odio vitae urna luctus auctor. Nam sit amet eros quam. Vestibulum dictum est at iaculis aliquam.</p>
+      <p class="flex-item">Fusce tincidunt rhoncus ipsum, eu maximus turpis pulvinar et. Nullam pretium pharetra ante, in accumsan velit facilisis et.</p>
+      <p class="flex-item">Vivamus leo sapien, cursus id venenatis a, efficitur sed dui. Pellentesque rhoncus lectus a dui semper tincidunt. Suspendisse interdum finibus augue, vitae blandit mauris mollis nec. Curabitur id viverra risus.</p>
+      <p class="flex-item">Donec vitae tempor nunc, sit amet maximus turpis. Cras varius vitae turpis quis blandit. Nunc congue condimentum ante, in congue justo faucibus sit amet.</p>
+      <p class="flex-item">Pellentesque feugiat pulvinar turpis, non ultricies quam ultrices eu. Aliquam velit dolor, aliquam id nisl a, interdum volutpat erat.</p>
+    </div>      
+  </section>
+
+  <script>
+    // button toggle lists
+    const buttonList = document.getElementsByClassName('toggle');
+    const alignItemsButtonList = document.getElementsByClassName('alignToggle');
+    const gapToggleButtonList = document.getElementsByClassName('gapToggle');
+    const flexBasisButtonList = document.getElementsByClassName('flexBasisToggle');
+    const flexGrowButtonList = document.getElementsByClassName('flexGrowToggle');
+    const flexShrinkButtonList = document.getElementsByClassName('flexShrinkToggle');
+    const alignSelfButtonList = document.getElementsByClassName('alignSelfToggle');
+    // flex containers list
+    const flexContainerList = document.getElementsByClassName('display-flex');
+    // flex items lists
+    const flexItemsList = document.getElementsByClassName('flex-item');
+    const flexItemsFirstChildList = document.getElementsByClassName('firstChild');
+    // buttons: justify-content
+    const flexStartBtn = document.getElementById('flexStartButton');
+    const flexEndBtn = document.getElementById('flexEndButton');
+    const centerBtn = document.getElementById('centerButton');
+    const spaceBetweenBtn = document.getElementById('spaceBetweenButton');
+    const spaceAroundBtn = document.getElementById('spaceAroundButton');
+    const spaceEvenlyBtn = document.getElementById('spaceEvenlyButton');
+    const justifyContentResetBtn = document.getElementById('justifyContentResetButton');
+    // buttons: align-items
+    const alignItemsStretchBtn = document.getElementById('alignItemsStretchButton');
+    const alignItemsFlexStartBtn = document.getElementById('alignItemsFlexStartButton');
+    const alignItemsSelfStartBtn = document.getElementById('alignItemsSelfStartButton');
+    const alignItemsStartBtn = document.getElementById('alignItemsStartButton');
+    const alignItemsFlexEndBtn = document.getElementById('alignItemsFlexEndButton');
+    const alignItemsSelfEndBtn = document.getElementById('alignItemsSelfEndButton');
+    const alignItemsEndBtn = document.getElementById('alignItemsEndButton');
+    const alignItemsCenterBtn = document.getElementById('alignItemsCenterButton');
+    const alignItemsBaselineBtn = document.getElementById('alignItemsBaselineButton');
+    const alignItemsResetBtn = document.getElementById('alignItemsResetButton');
+    // buttons: gap
+    const gap1emBtn = document.getElementById('gap1emButton');
+    const gap4emBtn = document.getElementById('gap4emButton');
+    const gap8emBtn = document.getElementById('gap8emButton');
+    const gapResetBtn = document.getElementById('gapResetButton');
+    // buttons: flex-basis
+    const flexBasisContentBtn = document.getElementById('flexBasisContentButton');
+    const flexBasisFitContentBtn = document.getElementById('flexBasisFitContentButton');
+    const flexBasis25PercentBtn = document.getElementById('flexBasis25PercentButton');
+    const flexBasis4emBtn = document.getElementById('flexBasis4emButton');
+    const flexBasis80pxBtn = document.getElementById('flexBasis80pxButton');
+    const flexBasisResetBtn = document.getElementById('flexBasisResetButton');
+    // buttons: flex-grow
+    const flexGrow1Btn = document.getElementById('flexGrow1Button');
+    const flexGrow2Btn = document.getElementById('flexGrow2Button');
+    const flexGrow3Btn = document.getElementById('flexGrow3Button');
+    const flexGrowResetBtn = document.getElementById('flexGrowResetButton');
+    // buttons: flex-shrink
+    const flexShrink1Btn = document.getElementById('flexShrink1Button');
+    const flexShrink2Btn = document.getElementById('flexShrink2Button');
+    const flexShrink3Btn = document.getElementById('flexShrink3Button');
+    const flexShrinkResetBtn = document.getElementById('flexShrinkResetButton');
+    // buttons: align-self
+    const alignSelfStretchBtn = document.getElementById('alignSelfStretchButton');
+    const alignSelfStartBtn = document.getElementById('alignSelfStartButton');
+    const alignSelfEndBtn = document.getElementById('alignSelfEndButton');
+    const alignSelfCenterBtn = document.getElementById('alignSelfCenterButton');
+    const alignSelfResetBtn = document.getElementById('alignSelfResetButton');
+
+
+    // reset function: justify-content
+    function unCheck() {
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.remove('flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly');
+      }
+      for (let j = 0; j < buttonList.length; j++) {                 
+        buttonList[j].classList.remove('checked'); 
+      }
+    }
+    // reset function: align-items
+    function uncheckAlignItems() {
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.remove('alignItems-stretch', 'alignItems-flex-start', 'alignItems-self-start', 'alignItems-start', 'alignItems-flex-end', 'alignItems-self-end', 'alignItems-end', 'alignItems-center', 'alignItems-baseline');
+      }
+      for (let j = 0; j < alignItemsButtonList.length; j++) {
+        alignItemsButtonList[j].classList.remove('checked');
+      }
+    }
+    // reset function: gap
+    function uncheckGap() {
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.remove('gap1em', 'gap4em', 'gap8em');
+      }
+      for (let j = 0; j < gapToggleButtonList.length; j++) {
+        gapToggleButtonList[j].classList.remove('checked');
+      }
+    }
+    // reset function: flex-basis
+    function uncheckFlexBasis() {
+      for (let i = 0; i < flexItemsList.length; i++) {
+        flexItemsList[i].classList.remove('flexBasisContent', 'flexBasisFitContent', 'flexBasis25Percent', 'flexBasis4em', 'flexBasis80px');
+      }
+      for (let j = 0; j < flexBasisButtonList.length; j++) {
+        flexBasisButtonList[j].classList.remove('checked');
+      }
+    }    
+    // reset function: flex-grow
+    function uncheckFlexGrow() {
+      for (let i = 0; i < flexItemsFirstChildList.length; i++) {
+        flexItemsFirstChildList[i].classList.remove('flexGrow1', 'flexGrow2', 'flexGrow3');
+      }
+      for (let j = 0; j < flexGrowButtonList.length; j++) {
+        flexGrowButtonList[j].classList.remove('checked');
+      }
+    }
+    // reset function: flex-shrink
+    function uncheckFlexShrink() {
+      for (let i = 0; i < flexItemsFirstChildList.length; i++) {
+        flexItemsFirstChildList[i].classList.remove('flexShrink1', 'flexShrink2', 'flexShrink3');
+      }
+      for (let j = 0; j < flexShrinkButtonList.length; j++) {
+        flexShrinkButtonList[j].classList.remove('checked');
+      }
+    }
+    // reset function: align-self
+    function uncheckAlignSelf() {
+      for (let i = 0; i < flexItemsList.length; i++) {
+        flexItemsList[i].classList.remove('alignSelfStretch', 'alignSelfStart', 'alignSelfEnd', 'alignSelfCenter');
+      }
+      for (let j = 0; j < alignSelfButtonList.length; j++) {
+        alignSelfButtonList[j].classList.remove('checked');
+      }
+    }
+
+
+    // button events: justify-content
+    flexStartBtn.addEventListener('click', function () {
+      unCheck();
+      flexStartBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('flex-start');
+      }
+    });
+
+    flexEndBtn.addEventListener('click', function () {
+      unCheck();
+      flexEndBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('flex-end');
+      }
+    });
+
+    centerBtn.addEventListener('click', function () {
+      unCheck();
+      centerBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('center');
+      }
+    });
+
+    spaceBetweenBtn.addEventListener('click', function () {
+      unCheck();
+      spaceBetweenBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('space-between');
+      }
+    });
+
+    spaceAroundBtn.addEventListener('click', function () {
+      unCheck();
+      spaceAroundBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('space-around');
+      }
+    });
+
+    spaceEvenlyBtn.addEventListener('click', function () {
+      unCheck();
+      spaceEvenlyBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('space-evenly');
+      }
+    });
+
+    justifyContentResetBtn.addEventListener('click', function () {
+      unCheck();
+    });
+
+
+
+    // button events: align-items
+    alignItemsStretchBtn.addEventListener('click', function () {
+      uncheckAlignItems();
+      alignItemsStretchBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('alignItems-stretch');
+      }
+    });
+
+    alignItemsFlexStartBtn.addEventListener('click', function () {
+      uncheckAlignItems();
+      alignItemsFlexStartBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('alignItems-flex-start');
+      }
+    });
+
+    alignItemsSelfStartBtn.addEventListener('click', function () {
+      uncheckAlignItems();
+      alignItemsSelfStartBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('alignItems-self-start');
+      }
+    });
+
+    alignItemsStartBtn.addEventListener('click', function () {
+      uncheckAlignItems();
+      alignItemsStartBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('alignItems-start');
+      }
+    });
+
+    alignItemsFlexEndBtn.addEventListener('click', function () {
+      uncheckAlignItems();
+      alignItemsFlexEndBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('alignItems-flex-end');
+      }
+    });
+
+    alignItemsSelfEndBtn.addEventListener('click', function () {
+      uncheckAlignItems();
+      alignItemsSelfEndBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('alignItems-self-end');
+      }
+    });
+
+    alignItemsEndBtn.addEventListener('click', function () {
+      uncheckAlignItems();
+      alignItemsEndBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('alignItems-end');
+      }
+    });
+
+    alignItemsCenterBtn.addEventListener('click', function () {
+      uncheckAlignItems();
+      alignItemsCenterBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('alignItems-center');
+      }
+    });
+
+    alignItemsBaselineBtn.addEventListener('click', function () {
+      uncheckAlignItems();
+      alignItemsBaselineBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('alignItems-baseline');
+      }
+    });
+
+    alignItemsResetBtn.addEventListener('click', function () {
+      uncheckAlignItems();
+    });
+
+
+
+    // button events: gap
+    gap1emBtn.addEventListener('click', function() {
+      uncheckGap();
+      gap1emBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('gap1em');
+      }
+    });
+
+    gap4emBtn.addEventListener('click', function() {
+      uncheckGap();
+      gap4emBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('gap4em');
+      }
+    });
+
+    gap8emBtn.addEventListener('click', function() {
+      uncheckGap();
+      gap8emBtn.classList.add('checked');
+      for (let i = 0; i < flexContainerList.length; i++) {
+        flexContainerList[i].classList.add('gap8em');
+      }
+    });
+
+    gapResetBtn.addEventListener('click', function() {
+      uncheckGap();
+    });
+
+
+
+    // button events: flex-basis
+    flexBasisContentBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+      flexBasisContentBtn.classList.add('checked');
+      for (const item of flexItemsList) {
+        item.classList.add('flexBasisContent');
+      }
+    });
+
+    flexBasisFitContentBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+      flexBasisFitContentBtn.classList.add('checked');
+      for (const item of flexItemsList) {
+        item.classList.add('flexBasisFitContent');
+      }
+    });
+
+    flexBasis25PercentBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+      flexBasis25PercentBtn.classList.add('checked');
+      for (const item of flexItemsList) {
+        item.classList.add('flexBasis25Percent');
+      }
+    });
+
+    flexBasis4emBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+      flexBasis4emBtn.classList.add('checked');
+      for (const item of flexItemsList) {
+        item.classList.add('flexBasis4em');
+      }
+    });
+
+    flexBasis80pxBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+      flexBasis80pxBtn.classList.add('checked');
+      for (const item of flexItemsList) {
+        item.classList.add('flexBasis80px');
+      }
+    });
+
+    flexBasisResetBtn.addEventListener('click', function() {
+      uncheckFlexBasis();
+    });
+
+
+
+    // button events: flex-grow
+    flexGrow1Btn.addEventListener('click', function() {
+      uncheckFlexGrow();
+      flexGrow1Btn.classList.add('checked');
+
+      for (const item of flexItemsFirstChildList) {
+        item.classList.add('flexGrow1');
+      }
+    });
+
+    flexGrow2Btn.addEventListener('click', function() {
+      uncheckFlexGrow();
+      flexGrow2Btn.classList.add('checked');
+      for (const item of flexItemsFirstChildList) {
+        item.classList.add('flexGrow2');
+      }
+    });
+
+    flexGrow3Btn.addEventListener('click', function() {
+      uncheckFlexGrow();
+      flexGrow3Btn.classList.add('checked');
+      for (const item of flexItemsFirstChildList) {
+        item.classList.add('flexGrow3');
+      }
+    });
+
+    flexGrowResetBtn.addEventListener('click', function() {
+      uncheckFlexGrow();
+    });
+
+
+
+    // button events: flex-shrink
+    flexShrink1Btn.addEventListener('click', function() {
+      uncheckFlexShrink();
+      flexShrink1Btn.classList.add('checked');
+
+      for (const item of flexItemsFirstChildList) {
+        item.classList.add('flexShrink1');
+      }
+    });
+
+    flexShrink2Btn.addEventListener('click', function() {
+      uncheckFlexShrink();
+      flexShrink2Btn.classList.add('checked');
+      for (const item of flexItemsFirstChildList) {
+        item.classList.add('flexShrink2');
+      }
+    });
+
+    flexShrink3Btn.addEventListener('click', function() {
+      uncheckFlexShrink();
+      flexShrink3Btn.classList.add('checked');
+      for (const item of flexItemsFirstChildList) {
+        item.classList.add('flexShrink3');
+      }
+    });
+
+    flexShrinkResetBtn.addEventListener('click', function() {
+      uncheckFlexShrink();
+    });
+
+
+
+    // button events: align-self
+    alignSelfStretchBtn.addEventListener('click', function () {
+      uncheckAlignSelf();
+      alignSelfStretchBtn.classList.add('checked');
+      for (let i = 0; i < flexItemsList.length; i++) {
+        flexItemsList[i].classList.add('alignSelfStretch');
+      }
+    });
+
+    alignSelfStartBtn.addEventListener('click', function () {
+      uncheckAlignSelf();
+      alignSelfStartBtn.classList.add('checked');
+      for (let i = 0; i < flexItemsList.length; i++) {
+        flexItemsList[i].classList.add('alignSelfStart');
+      }
+    });
+
+    alignSelfEndBtn.addEventListener('click', function () {
+      uncheckAlignSelf();
+      alignSelfEndBtn.classList.add('checked');
+      for (let i = 0; i < flexItemsList.length; i++) {
+        flexItemsList[i].classList.add('alignSelfEnd');
+      }
+    });
+
+    alignSelfCenterBtn.addEventListener('click', function () {
+      uncheckAlignSelf();
+      alignSelfCenterBtn.classList.add('checked');
+      for (let i = 0; i < flexItemsList.length; i++) {
+        flexItemsList[i].classList.add('alignSelfCenter');
+      }
+    });
+
+    alignSelfResetBtn.addEventListener('click', function () {
+      uncheckAlignSelf();
+    });
+
+  </script>
+  <script src="./js/scripts.js" type="text/javascript"></script>
+</body>
+</html>
