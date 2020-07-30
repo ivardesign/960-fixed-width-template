@@ -335,6 +335,7 @@ figcaption h2 {
 .site-footer {
   display: grid;
   grid-auto-flow: var(--footer-grid-auto-flow, unset);
+  justify-content: space-evenly;
 }
 
 .site-footer ul {
