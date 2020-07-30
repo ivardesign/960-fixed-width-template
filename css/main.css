@@ -347,6 +347,10 @@ figcaption h2 {
   line-height: 2;
 }
 
+.copyright {
+  text-align: center;
+}
+
 .site-footer a, .copyright a {
   color: var(--white);
 }
